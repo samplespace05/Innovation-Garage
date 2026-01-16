@@ -1,26 +1,156 @@
-@import "tailwindcss";
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .pixel-corners {
+        clip-path: polygon(
+            0 5px, 5px 5px, 5px 0,
+            calc(100% - 5px) 0, calc(100% - 5px) 5px, 100% 5px,
+            100% calc(100% - 5px), calc(100% - 5px) calc(100% - 5px), calc(100% - 5px) 100%,
+            5px 100%, 5px calc(100% - 5px), 0 calc(100% - 5px)
+        );
+    }
+
+    .text-glow {
+        text-shadow: 0 0 10px rgba(215, 38, 255, 0.5);
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #121212; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FF6A00; 
+    border: 2px solid #121212;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #D726FF; 
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background: #D726FF;
+    color: #ffffff;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.5s ease-out forwards;
+} 
+ */
+
+ @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------------------------------------------------------------------------- */
+/* GLOBAL THEME SETUP                            */
+/* -------------------------------------------------------------------------- */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 18, 18, 18;
+  --background-end-rgb: 18, 18, 18;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: #121212; /* Forces dark background immediately */
+  font-family: var(--font-grotesk), sans-serif;
+  overflow-x: hidden;
+}
+
+/* -------------------------------------------------------------------------- */
+/* CUSTOM UTILITIES (Required for your design)   */
+/* -------------------------------------------------------------------------- */
+
+@layer utilities {
+    .pixel-corners {
+        clip-path: polygon(
+            0 5px, 5px 5px, 5px 0,
+            calc(100% - 5px) 0, calc(100% - 5px) 5px, 100% 5px,
+            100% calc(100% - 5px), calc(100% - 5px) calc(100% - 5px), calc(100% - 5px) 100%,
+            5px 100%, 5px calc(100% - 5px), 0 calc(100% - 5px)
+        );
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #121212; 
+}
+::-webkit-scrollbar-thumb {
+    background: #FF6A00; 
+    border: 2px solid #121212;
+}
+
+
+/* Custom Textarea Scrollbar from code2.html */
+textarea::-webkit-scrollbar {
+    width: 12px;
+    background: #121212;
+    border-left: 2px solid #FF6A00;
+}
+textarea::-webkit-scrollbar-thumb {
+    background: #FF6A00; 
+    border: 2px solid #121212;
+}
+textarea::-webkit-scrollbar-thumb:hover {
+    background: #D726FF; 
+}
+
+/* Global Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #121212; 
+}
+::-webkit-scrollbar-thumb {
+    background: #FF6A00; 
+    border: 2px solid #121212;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #D726FF; 
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translate3d(0, 40px, 0); }
+    to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+.animate-fade-in-up {
+    animation: fadeInUp 0.5s ease-out forwards;
 }
