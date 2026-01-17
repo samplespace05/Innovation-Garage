@@ -26,16 +26,55 @@
 
 
 
+// import { NextResponse } from "next/server";
+
+// export async function POST(req: Request) {
+//   try {
+//     const body = await req.json();
+
+//     // Replace this with your actual Google Apps Script Web App URL
+//     // It looks like: https://script.google.com/macros/s/AKfycbx.../exec
+//     const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx2Wgazb3uSEJ2sDdWyADAh8cbsHf1THO2L0kVHjX_QESThvXgd02NauekOn2E6H9eP/exec"
+//     if (!GOOGLE_SCRIPT_URL) {
+//       return NextResponse.json(
+//         { message: "Server Error: Google Sheet URL is not configured." },
+//         { status: 500 }
+//       );
+//     }
+//     const payload = {
+//       sheetName: "IG_idea_submissions", // <--- TELLS SCRIPT WHERE TO GO
+//       ...body
+//     };
+//     const response = await fetch(GOOGLE_SCRIPT_URL, {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "text/plain;charset=utf-8", // Apps Script handles text/plain better for CORS
+//       },
+//       body: JSON.stringify(body),
+//     });
+
+//     const result = await response.json();
+
+//     if (result.result === "success") {
+//       return NextResponse.json({ message: "Success" }, { status: 200 });
+//     } else {
+//       throw new Error(result.error);
+//     }
+
+//   } catch (error) {
+//     console.error("Submission Error:", error);
+//     return NextResponse.json({ message: "Failed", error }, { status: 500 });
+//   }
+// }
+
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
 
-    // Replace this with your actual Google Apps Script Web App URL
-    // It looks like: https://script.google.com/macros/s/AKfycbx.../exec
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyFXvV4IwOpyqL28CBQVjGvjW1bA6GUT6Q33EY6duaCyIJM6USMMACVFqFlNPFh-Z66/exec";
-
+    // 🔴 IMPORTANT: Copy the URL from app/api/newsletter/route.ts and paste it here
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx2Wgazb3uSEJ2sDdWyADAh8cbsHf1THO2L0kVHjX_QESThvXgd02NauekOn2E6H9eP/exec"
     if (!GOOGLE_SCRIPT_URL) {
       return NextResponse.json(
         { message: "Server Error: Google Sheet URL is not configured." },
@@ -43,12 +82,18 @@ export async function POST(req: Request) {
       );
     }
 
+    // Prepare payload with the specific Sheet Name "Sheet1"
+    const payload = {
+      sheetName: "IG_idea_submissions", // <--- Explicitly tell script to use the first tab
+      ...body
+    };
+
     const response = await fetch(GOOGLE_SCRIPT_URL, {
       method: "POST",
       headers: {
-        "Content-Type": "text/plain;charset=utf-8", // Apps Script handles text/plain better for CORS
+        "Content-Type": "text/plain;charset=utf-8",
       },
-      body: JSON.stringify(body),
+      body: JSON.stringify(payload),
     });
 
     const result = await response.json();
