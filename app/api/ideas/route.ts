@@ -34,7 +34,7 @@ export async function POST(req: Request) {
 
     // Replace this with your actual Google Apps Script Web App URL
     // It looks like: https://script.google.com/macros/s/AKfycbx.../exec
-    const GOOGLE_SCRIPT_URL = process.env.NEXTAUTH_URL_GSHEET;
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyFXvV4IwOpyqL28CBQVjGvjW1bA6GUT6Q33EY6duaCyIJM6USMMACVFqFlNPFh-Z66/exec";
 
     if (!GOOGLE_SCRIPT_URL) {
       return NextResponse.json(
@@ -42,7 +42,7 @@ export async function POST(req: Request) {
         { status: 500 }
       );
     }
-    
+
     const response = await fetch(GOOGLE_SCRIPT_URL, {
       method: "POST",
       headers: {
