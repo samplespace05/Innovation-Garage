@@ -248,7 +248,7 @@ export default function Home() {
                             <p className="text-text-main/60 font-display text-sm mb-4">48 hours of non-stop coding marathon.</p>
                             <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
                                 <span className="text-xs font-pixel uppercase text-white/50">Oct 12, 2023</span>
-                                <span class="text-primary font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
+                                <span className="text-primary font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
                             </div>
                         </div>
                     </a>
@@ -265,7 +265,7 @@ export default function Home() {
                             <p className="text-text-main/60 font-display text-sm mb-4">Prototyping future interfaces & UI.</p>
                             <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
                                 <span className="text-xs font-pixel uppercase text-white/50">Nov 05, 2023</span>
-                                <span class="text-secondary font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
+                                <span className="text-secondary font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
                             </div>
                         </div>
                     </a>
@@ -282,7 +282,7 @@ export default function Home() {
                             <p className="text-text-main/60 font-display text-sm mb-4">Debating the ghost in the machine.</p>
                             <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
                                 <span className="text-xs font-pixel uppercase text-white/50">Dec 10, 2023</span>
-                                <span class="text-highlight font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
+                                <span className="text-highlight font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
                             </div>
                         </div>
                     </a>
@@ -299,7 +299,7 @@ export default function Home() {
                             <p className="text-text-main/60 font-display text-sm mb-4">Autonomous systems in action.</p>
                             <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
                                 <span className="text-xs font-pixel uppercase text-white/50">Jan 15, 2024</span>
-                                <span class="text-primary font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
+                                <span className="text-primary font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
                             </div>
                         </div>
                     </a>
