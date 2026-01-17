@@ -2,16 +2,18 @@ import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json(); // Expects { email: "..." }
+    const body = await req.json();
 
-const GOOGLE_SCRIPT_URL = process.env.NEXTAUTH_URL_GSHEET; 
+    // Use the SAME Google Script URL you used for Ideas/Newsletter
+    const GOOGLE_SCRIPT_URL = process.env.NEXTAUTH_URL_GSHEET; 
 
     if (!GOOGLE_SCRIPT_URL) {
       return NextResponse.json({ message: "Config Error" }, { status: 500 });
     }
 
+    // Prepare payload for the "getCertificate" action
     const payload = {
-      sheetName: "Newsletter", // <--- TARGETS THE NEW TAB
+      action: "getCertificate",
       email: body.email
     };
 
@@ -24,12 +26,12 @@ const GOOGLE_SCRIPT_URL = process.env.NEXTAUTH_URL_GSHEET;
     const result = await response.json();
 
     if (result.result === "success") {
-      return NextResponse.json({ message: "Success" }, { status: 200 });
+      return NextResponse.json({ success: true, data: result.data }, { status: 200 });
     } else {
-      throw new Error(result.error);
+      return NextResponse.json({ success: false, error: result.error }, { status: 404 });
     }
 
   } catch (error) {
-    return NextResponse.json({ message: "Failed", error }, { status: 500 });
+    return NextResponse.json({ success: false, error: "Network Error" }, { status: 500 });
   }
 }

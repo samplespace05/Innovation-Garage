@@ -13,9 +13,9 @@ export default function Archive() {
         
         {/* Central Glitch Container */}
         <div className="relative z-10 text-center px-6 max-w-3xl">
-            <div className="mb-8 inline-block p-4 border-4 border-dashed border-gray-700 rounded-full animate-spin-slow">
+            {/* <div className="mb-8 inline-block  p-4 border-4 border-dashed border-gray-700 rounded-full animate-spin-slow">
                 <span className="material-symbols-outlined text-6xl text-gray-700">history</span>
-            </div>
+            </div> */}
             
             <h1 className="text-6xl md:text-8xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-b from-gray-500 to-gray-800">
                 ARCHIVES<br/>OFFLINE

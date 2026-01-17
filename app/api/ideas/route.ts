@@ -74,7 +74,7 @@ export async function POST(req: Request) {
     const body = await req.json();
 
     // 🔴 IMPORTANT: Copy the URL from app/api/newsletter/route.ts and paste it here
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx2Wgazb3uSEJ2sDdWyADAh8cbsHf1THO2L0kVHjX_QESThvXgd02NauekOn2E6H9eP/exec"
+    const GOOGLE_SCRIPT_URL = process.env.NEXTAUTH_URL_GSHEET; 
     if (!GOOGLE_SCRIPT_URL) {
       return NextResponse.json(
         { message: "Server Error: Google Sheet URL is not configured." },

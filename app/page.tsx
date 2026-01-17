@@ -730,7 +730,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import InteractiveNodes from "@/components/InteractiveNodes"; // <--- Updated Import
-
+import IdeasPromo from "@/components/IdeasPromo";
 export default function Home() {
   return (
     <>
@@ -775,7 +775,7 @@ export default function Home() {
                 </h1>
 
                 <p className="max-w-2xl text-text-main/70 text-lg md:text-xl font-display mt-6 bg-background-main/50 backdrop-blur-md p-6 border border-white/10 pixel-corners pointer-events-auto">
-                    Welcome to the <span className="text-primary font-bold">Innovation Garage</span>. A sanctuary for builders, dreamers, and radical thinkers shaping tomorrow.
+                    Welcome to the <span className="text-primary font-bold">Innovation Garage</span>. A hands-on community to build, experiment, and explore.
                 </p>
             </div>
         </header>
@@ -825,7 +825,8 @@ export default function Home() {
                         </div>
                         <h3 className="text-3xl font-pixel uppercase text-text-main mb-4 group-hover:text-primary transition-colors">Our Mission</h3>
                         <p className="text-text-main/70 text-lg leading-relaxed font-display mb-6">
-                            Innovation happens at the intersection of discipline and play. We foster a community of diverse thinkers who challenge the status quo.
+                            To support students in turning ideas into projects and collaborations. 
+We bring students from diverse backgrounds together to learn and build side by side.
                         </p>
                     </div>
 
@@ -840,12 +841,16 @@ export default function Home() {
                         </div>
                         <h3 className="text-3xl font-pixel uppercase text-text-main mb-4 group-hover:text-secondary transition-colors">Our History</h3>
                         <p className="text-text-main/70 text-lg leading-relaxed font-display mb-6">
-                            From a basement meetup for hardware hackers to a premier campus hub launching 50+ startups. What began as a small group is now a movement.
+                            What began as a small student meetup has grown into a campus makerspace for creation and skill development. Founded in 2013, Innovation Garage has supported 50+ startups and serves as a startup incubator at NITW.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
+
+        {/* ================= NEW IG_TANK PROMO SECTION ================= */}
+        <IdeasPromo /> 
+        {/* ============================================================= */}
 
         {/* ================= PAST EVENTS SLIDER ================= */}
         <section className="py-20 px-6 bg-surface-card border-t border-white/10 relative overflow-hidden">
@@ -869,8 +874,8 @@ export default function Home() {
                             <span className="absolute top-4 right-4 bg-black/80 text-primary border border-primary px-2 py-1 font-pixel text-lg uppercase tracking-wider">Hackathon</span>
                         </div>
                         <div className="p-6">
-                            <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">Cyber Summit 23</h3>
-                            <p className="text-text-main/60 font-display text-sm mb-4">48 hours of non-stop coding marathon.</p>
+                            <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">Startup Simulation</h3>
+                            <p className="text-text-main/60 font-display text-sm mb-4">A hands-on startup game where teams made real-time decisions across tech, finance, and marketing.</p>
                             <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
                                 <span className="text-xs font-pixel uppercase text-white/50">Oct 12, 2023</span>
                                 <span className="text-primary font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
@@ -886,8 +891,8 @@ export default function Home() {
                             <span className="absolute top-4 right-4 bg-black/80 text-secondary border border-secondary px-2 py-1 font-pixel text-lg uppercase tracking-wider">Workshop</span>
                         </div>
                         <div className="p-6">
-                            <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">Design Thinking</h3>
-                            <p className="text-text-main/60 font-display text-sm mb-4">Prototyping future interfaces & UI.</p>
+                            <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">Ignite 36</h3>
+                            <p className="text-text-main/60 font-display text-sm mb-4">A 36-hour hackathon where teams built and pitched solutions to problem statements. Ideas went from concept to demo fast.</p>
                             <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
                                 <span className="text-xs font-pixel uppercase text-white/50">Nov 05, 2023</span>
                                 <span className="text-secondary font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
@@ -903,8 +908,10 @@ export default function Home() {
                             <span className="absolute top-4 right-4 bg-black/80 text-highlight border border-highlight px-2 py-1 font-pixel text-lg uppercase tracking-wider">Panel</span>
                         </div>
                         <div className="p-6">
-                            <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">AI Ethics Forum</h3>
-                            <p className="text-text-main/60 font-display text-sm mb-4">Debating the ghost in the machine.</p>
+                            <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">E-Summit</h3>
+                            <p className="text-text-main/60 font-display text-sm mb-4">Focused on inspiring
+stories, challenges, and opportunities and was highly beneficial for aspiring
+entrepreneurs.</p>
                             <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
                                 <span className="text-xs font-pixel uppercase text-white/50">Dec 10, 2023</span>
                                 <span className="text-highlight font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
@@ -920,7 +927,7 @@ export default function Home() {
                             <span className="absolute top-4 right-4 bg-black/80 text-primary border border-primary px-2 py-1 font-pixel text-lg uppercase tracking-wider">Showcase</span>
                         </div>
                         <div className="p-6">
-                            <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">Robotics Demo</h3>
+                            <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">Agentic AI workshop</h3>
                             <p className="text-text-main/60 font-display text-sm mb-4">Autonomous systems in action.</p>
                             <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
                                 <span className="text-xs font-pixel uppercase text-white/50">Jan 15, 2024</span>

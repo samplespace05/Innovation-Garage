@@ -1369,7 +1369,7 @@ export default function Events() {
                 </div>
                 <h1 className="text-6xl md:text-8xl font-normal uppercase leading-[0.8] tracking-tight text-warm-white drop-shadow-md">
                     EVENTS_<br/>
-                    <span className="text-neon-orange drop-shadow-[4px_4px_0px_rgba(255,106,0,0.8)]">DATABASE</span>
+                    <span className="text-neon-orange ">DATABASE</span>
                 </h1>
                 <p className="text-highlight text-2xl md:text-3xl leading-tight max-w-xl mt-4 border-l-4 border-neon-orange pl-4 bg-black/40 p-2 backdrop-blur-sm">
                     {">"} Browsing timeline logs. Accessing upcoming schedules and historical archives.

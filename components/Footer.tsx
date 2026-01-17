@@ -247,13 +247,13 @@ export default function Footer() {
           <p className="text-gray-500 text-sm font-display leading-relaxed">
             Building the future, one pixel at a time. Join the community of radical thinkers and doers.
           </p>
-          <p className="text-gray-600 uppercase tracking-widest text-xs mt-2">© 2024. Systems Online.</p>
+          <p className="text-gray-600 uppercase tracking-widest text-s mt-2">© 2026. Systems Online.</p>
         </div>
 
         {/* 2. Navigation */}
         <div className="flex flex-col gap-4">
           <h4 className="text-neon-magenta text-xl uppercase tracking-widest border-b border-white/10 pb-2 mb-2 w-fit">Platform</h4>
-          {["Home", "Events", "Ideas", "Teams"].map((item) => (
+          {["Home", "Events", "Ideas", "Teams", "Certificates"].map((item) => (
             <Link
               key={item}
               href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
