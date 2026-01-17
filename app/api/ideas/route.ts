@@ -36,6 +36,13 @@ export async function POST(req: Request) {
     // It looks like: https://script.google.com/macros/s/AKfycbx.../exec
     const GOOGLE_SCRIPT_URL = process.env.NEXTAUTH_URL_GSHEET;
 
+    if (!GOOGLE_SCRIPT_URL) {
+      return NextResponse.json(
+        { message: "Server Error: Google Sheet URL is not configured." },
+        { status: 500 }
+      );
+    }
+    
     const response = await fetch(GOOGLE_SCRIPT_URL, {
       method: "POST",
       headers: {
