@@ -375,7 +375,7 @@ export default function Events() {
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 px-2 mb-20">
             
             {/* Card 1: Talks (No link, shows modal) */}
-            <div className="group flex flex-col bg-surface-card border-2 border-secondary shadow-retro-magenta hover:shadow-[12px_12px_0px_0px_#E0AAFF] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-200 ease-[steps(2)] h-full relative rounded-none">
+            <div className="group flex flex-col bg-surface-card border-2 border-secondary shadow-retro-magenta hover:shadow-[12px_12px_0px_0px_#E0AAFF] hover:-translate-x-1 hover:-translate-y-1 transition-all h-full relative rounded-none">
                 <div className="relative h-64 w-full overflow-hidden border-b-2 border-secondary bg-black">
                     <div className="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100" style={{backgroundImage: "url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000')"}}></div>
                     <div className="absolute inset-0 bg-secondary/20 mix-blend-overlay"></div>
@@ -406,7 +406,7 @@ export default function Events() {
             </div>
 
             {/* Card 2: Hackathon (Example with Link) */}
-            <div className="group flex flex-col bg-surface-card border-2 border-secondary shadow-retro-magenta hover:shadow-[12px_12px_0px_0px_#E0AAFF] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-200 ease-[steps(2)] h-full relative rounded-none">
+            <div className="group flex flex-col bg-surface-card border-2 border-secondary shadow-retro-magenta hover:shadow-[12px_12px_0px_0px_#E0AAFF] hover:-translate-x-1 hover:-translate-y-1 transition-all h-full relative rounded-none">
                 <div className="relative h-64 w-full overflow-hidden border-b-2 border-secondary bg-black">
                     <div className="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100" style={{backgroundImage: "url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000')"}}></div>
                     <div className="absolute inset-0 bg-secondary/20 mix-blend-overlay"></div>
@@ -437,7 +437,7 @@ export default function Events() {
             </div>
 
             {/* Card 3: Workshop */}
-            <div className="group flex flex-col bg-surface-card border-2 border-secondary shadow-retro-magenta hover:shadow-[12px_12px_0px_0px_#E0AAFF] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-200 ease-[steps(2)] h-full relative rounded-none">
+            <div className="group flex flex-col bg-surface-card border-2 border-secondary shadow-retro-magenta hover:shadow-[12px_12px_0px_0px_#E0AAFF] hover:-translate-x-1 hover:-translate-y-1 transition-all h-full relative rounded-none">
                 <div className="relative h-64 w-full overflow-hidden border-b-2 border-secondary bg-black">
                     <div className="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100" style={{backgroundImage: "url('https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1000')"}}></div>
                     <div className="absolute inset-0 bg-secondary/20 mix-blend-overlay"></div>
