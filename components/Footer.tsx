@@ -204,6 +204,7 @@
 "use client"; // Needs to be client component for interactivity
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -241,7 +242,14 @@ export default function Footer() {
         {/* 1. Brand */}
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-3">
-             <span className="material-symbols-outlined text-neon-orange text-4xl">terminal</span>
+             {/* 2. Added Image component with specific width/height */}
+             <Image 
+                src="/logo.png" 
+                alt="Innovation Garage Logo" 
+                width={48} 
+                height={48} 
+                className="object-contain"
+             />
              <h3 className="text-2xl font-bold uppercase text-white tracking-widest">Innovation<br/>Garage</h3>
           </div>
           <p className="text-gray-500 text-sm font-display leading-relaxed">

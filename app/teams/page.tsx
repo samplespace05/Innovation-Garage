@@ -147,30 +147,6 @@ import Footer from "@/components/Footer";
 import { useState } from "react";
 import LinkedIn from "next-auth/providers/linkedin";
 
-// Mock Data matching code1.html structure
-// const teamData = {
-//   Startup: [
-//     { name: "David Kim", role: "Addl. Sec", dept: "Operations Dept.", img: "https://randomuser.me/api/portraits/men/32.jpg", link: "linkedinlink"},
-//     { name: "Sarah J.", role: "Executive", dept: "Outreach Dept.", img: "https://randomuser.me/api/portraits/women/44.jpg", link: "linkedinlink"},
-//     { name: "Mike Chang", role: "Executive", dept: "Incubation Dept.", img: "https://randomuser.me/api/portraits/men/22.jpg", link: "linkedinlink" },
-//     { name: "Priya P.", role: "Executive", dept: "Events Dept.", img: "https://randomuser.me/api/portraits/women/28.jpg" , link: "linkedinlink"},
-//   ],
-//   "AI Wing": [
-//     { name: "Leo Turner", role: "Addl. Sec", dept: "Research Dept.", img: "https://randomuser.me/api/portraits/men/54.jpg", link: "linkedinlink" },
-//     { name: "Elena R.", role: "Executive", dept: "NLP Dept.", img: "https://randomuser.me/api/portraits/women/65.jpg" , link: "linkedinlink"},
-//   ],
-//   Tech: [
-//     { name: "Jordan Lee", role: "Addl. Sec", dept: "Dev Dept.", img: "https://randomuser.me/api/portraits/men/85.jpg" , link: "linkedinlink"},
-//     { name: "Alice Wu", role: "Executive", dept: "DevOps Dept.", img: "https://randomuser.me/api/portraits/women/33.jpg" , link: "linkedinlink"},
-//     { name: "Raj M.", role: "Executive", dept: "Security Dept.", img: "https://randomuser.me/api/portraits/men/11.jpg" , link: "linkedinlink"},
-//   ],
-//   ECC: [
-//     { name: "Sophia Chen", role: "Addl. Sec", dept: "Comms Dept.", img: "https://randomuser.me/api/portraits/women/12.jpg" , link: "linkedinlink"},
-//     { name: "Tom Baker", role: "Executive", dept: "PR Dept.", img: "https://randomuser.me/api/portraits/men/4.jpg" , link: "linkedinlink"},
-//   ]
-// };
-
-
 const teamData = {
   ECC: [
     { 
@@ -362,10 +338,10 @@ export default function Teams() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {/* Faculty Advisor */}
+              {/* Faculty Advisor
               <div className="group relative bg-surface-card border-2 border-white/10 p-8 hover:border-secondary transition-all duration-300 shadow-none hover:shadow-[8px_8px_0px_0px_rgba(215,38,255,0.5)]">
                 <div className="absolute top-4 right-4 opacity-50">
-                  {/* <span className="material-symbols-outlined text-4xl text-white/20">school</span> */}
+
                 </div>
                 <div className="flex flex-col sm:flex-row gap-8 items-center sm:items-start">
                   <div className="w-32 h-32 overflow-hidden border-2 border-secondary shrink-0 bg-background-main relative">
@@ -389,7 +365,7 @@ export default function Teams() {
                     </a>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               {/* General Secretary */}
               <div className="group relative bg-surface-card border-2 border-white/10 p-8 hover:border-primary transition-all duration-300 shadow-none hover:shadow-[8px_8px_0px_0px_rgba(255,106,0,0.5)]">
@@ -399,19 +375,19 @@ export default function Teams() {
                 <div className="flex flex-col sm:flex-row gap-8 items-center sm:items-start">
                   <div className="w-32 h-32 overflow-hidden border-2 border-primary shrink-0 bg-background-main">
                     <img 
-                      src="https://randomuser.me/api/portraits/men/45.jpg" 
+                      src="https://api.dicebear.com/7.x/miniavs/svg?seed=Akshay" 
                       alt="General Secretary" 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                       style={{ imageRendering: "pixelated" }}
                     />
                   </div>
                   <div className="text-center sm:text-left flex-1">
-                    <h3 className="text-3xl font-bold text-text-main font-silkscreen mb-2 uppercase">Marcus Thorne</h3>
+                    <h3 className="text-3xl font-bold text-text-main font-silkscreen mb-2 uppercase">Lavanya Trivedi</h3>
                     <div className="inline-block bg-primary/10 px-2 py-0.5 mb-3 border border-primary/20">
                       <p className="text-primary text-lg font-bold uppercase tracking-wide font-pixel">General Secretary</p>
                     </div>
-                    <p className="text-gray-400 text-lg mb-6 leading-tight font-pixel">Student Council • Final Year</p>
-                    <a className="inline-flex items-center gap-2 text-lg text-cyber-lavender hover:text-primary transition-colors uppercase border-b border-cyber-lavender/30 hover:border-primary pb-0.5 font-pixel" href="#">
+                    <p className="text-gray-400 text-lg mb-6 leading-tight font-pixel">3rd Year</p>
+                    <a className="inline-flex items-center gap-2 text-lg text-cyber-lavender hover:text-primary transition-colors uppercase border-b border-cyber-lavender/30 hover:border-primary pb-0.5 font-pixel" href="https://www.linkedin.com/in/lavanyatrivedi/?originalSubdomain=in">
                       <span className="material-symbols-outlined text-xl">link</span>
                       LinkedIn Profile
                     </a>
