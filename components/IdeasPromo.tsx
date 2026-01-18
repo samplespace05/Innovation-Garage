@@ -13,7 +13,7 @@ export default function IdeasPromo() {
         
         {/* LEFT SIDE: TYPOGRAPHY & BRANDING */}
         <div className="flex flex-col gap-6">
-            
+            <span className="text-primary font-pixel text-xl uppercase tracking-widest mb-2 block">02 // Submission Deck</span>
             {/* Glitchy Label */}
             <div className="flex items-center gap-3">
                 <span className="w-3 h-3 bg-neon-magenta animate-pulse shadow-[0_0_10px_#D726FF]"></span>
@@ -63,7 +63,7 @@ export default function IdeasPromo() {
                 {/* Header Icon */}
                 <div className="flex justify-between items-start">
                     <span className="material-symbols-outlined text-6xl text-neon-orange">rocket_launch</span>
-                    <span className="font-pixel text-gray-500 text-sm">SECURE_UPLINK_V4</span>
+                    {/* <span className="font-pixel text-gray-500 text-sm">SECURE_UPLINK_V4</span> */}
                 </div>
 
                 <div className="space-y-2">
@@ -75,7 +75,7 @@ export default function IdeasPromo() {
 
                 {/* The Big Button */}
                 <Link href="/ideas" className="group/btn relative block w-full">
-                    <div className="absolute inset-0 bg-neon-orange translate-y-1 translate-x-1 group-hover/btn:translate-y-2 group-hover/btn:translate-x-2 transition-transform"></div>
+                    <div className="absolute inset-0 bg-neon-orange translate-y-0 translate-x-0 group-hover/btn:translate-y-2 group-hover/btn:translate-x-2 transition-transform"></div>
                     <div className="relative bg-black border-2 border-white p-4 text-center hover:text-white transition-colors">
                         <span className="font-pixel text-2xl uppercase tracking-widest font-bold flex items-center justify-center gap-3">
                             Submit Pitch <span className="material-symbols-outlined">arrow_forward</span>

@@ -19,7 +19,7 @@ export async function POST(req: Request) {
     }
 
     // 2. FETCH FROM GOOGLE SHEETS
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw1kFRdmyhbrY5buom9vWwGk-zmt5rC3qIh1ZZjuGi6Qu-uIoQ0DoCZi0eLoL0H_A_D/exec"; 
+    const GOOGLE_SCRIPT_URL = process.env.NEXTAUTH_URL_GSHEET; 
     
     if (!GOOGLE_SCRIPT_URL) {
        return NextResponse.json({ success: false, error: "Server Configuration Error: Sheet URL not set." }, { status: 500 });

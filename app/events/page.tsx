@@ -1365,7 +1365,7 @@ export default function Events() {
             <div className="relative z-10 flex flex-col gap-4 max-w-3xl">
                 <div className="inline-flex items-center gap-2 bg-surface-card text-secondary px-3 py-1 border-2 border-secondary shadow-[4px_4px_0px_0px_#D726FF] w-fit transform -rotate-1">
                     <span className="material-symbols-outlined text-xl">calendar_month</span>
-                    <span className="text-xl uppercase tracking-widest">System_V2.0 // Active</span>
+                    <span className="text-xl uppercase tracking-widest">SYSTEM // OPERATIONAL</span>
                 </div>
                 <h1 className="text-6xl md:text-8xl font-normal uppercase leading-[0.8] tracking-tight text-warm-white drop-shadow-md">
                     EVENTS_<br/>
@@ -1408,7 +1408,7 @@ export default function Events() {
         {/* UPCOMING LABEL */}
         <div className="w-full mb-6 flex items-center gap-4">
             <div className="bg-secondary text-white px-4 py-2 text-2xl font-bold border-2 border-white shadow-[4px_4px_0_0_#FFF] tracking-wider transform -skew-x-12">
-                2025 // UPCOMING_
+                2026 // UPCOMING_
             </div>
             <div className="h-1 flex-1 bg-surface-card border-b-4 border-dashed border-gray-700"></div>
         </div>
@@ -1463,7 +1463,7 @@ export default function Events() {
         {/* ARCHIVE LABEL */}
         <div className="w-full mb-6 flex items-center gap-4">
             <div className="bg-neon-orange text-black px-4 py-2 text-2xl font-bold border-2 border-white shadow-[4px_4px_0_0_#FFF] tracking-wider transform -skew-x-12">
-                2024 // ARCHIVE_
+                2025 // ARCHIVE_
             </div>
             <div className="h-1 flex-1 bg-surface-card border-b-4 border-dashed border-gray-700"></div>
         </div>

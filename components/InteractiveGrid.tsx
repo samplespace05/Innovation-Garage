@@ -197,6 +197,187 @@
 
 
 
+// "use client";
+// import { useEffect, useRef } from "react";
+
+// export default function InteractiveGrid() {
+//   const canvasRef = useRef<HTMLCanvasElement>(null);
+
+//   useEffect(() => {
+//     const canvas = canvasRef.current;
+//     if (!canvas) return;
+//     const ctx = canvas.getContext("2d");
+//     if (!ctx) return;
+
+//     let animationFrameId: number;
+//     let mouse = { x: -1000, y: -1000 };
+//     let isClicked = false;
+
+//     // --- VISUAL CONFIGURATION (UPDATED) ---
+    // const spacing = 45;          // Slightly wider spacing
+    // const dotSize = 5.0         // Larger dots (was 1.5)
+    // const dotOpacity = 0.6;      // Much darker dots (was 0.3)
+    // const lineOpacity = 0.54;     // Much darker lines (was 0.15)
+    
+    // // --- PHYSICS CONFIGURATION ---
+    // const returnSpeed = 0.005; 
+    // const magnetStrength = 1;  // Slightly stronger pull
+    // const explosionForce = 60;   
+    
+//     let points: Point[] = [];
+
+//     class Point {
+//       x: number;
+//       y: number;
+//       originX: number;
+//       originY: number;
+//       vx: number;
+//       vy: number;
+
+//       constructor(x: number, y: number) {
+//         this.x = x;
+//         this.y = y;
+//         this.originX = x;
+//         this.originY = y;
+//         this.vx = 0;
+//         this.vy = 0;
+//       }
+
+//       update() {
+//         const dx = mouse.x - this.x;
+//         const dy = mouse.y - this.y;
+//         const distance = Math.sqrt(dx * dx + dy * dy);
+
+//         if (isClicked) {
+//           if (distance < 300) {
+//             const force = (300 - distance) / 300;
+//             this.vx -= (dx / distance) * force * explosionForce;
+//             this.vy -= (dy / distance) * force * explosionForce;
+//           }
+//         } else {
+//           if (distance < 250) { // Increased range slightly
+//             const force = (250 - distance) / 250;
+//             this.vx += (dx / distance) * force * magnetStrength;
+//             this.vy += (dy / distance) * force * magnetStrength;
+//           }
+//         }
+
+//         const homeDx = this.originX - this.x;
+//         const homeDy = this.originY - this.y;
+        
+//         this.vx += homeDx * returnSpeed;
+//         this.vy += homeDy * returnSpeed;
+
+//         this.vx *= 0.85;
+//         this.vy *= 0.85;
+
+//         this.x += this.vx;
+//         this.y += this.vy;
+//       }
+//     }
+
+//     const init = () => {
+//       points = [];
+//       canvas.width = window.innerWidth;
+//       canvas.height = window.innerHeight;
+
+//       // Extend grid slightly off-screen to prevent edges showing on warp
+//       for (let x = -spacing; x < canvas.width + spacing * 2; x += spacing) {
+//         for (let y = -spacing; y < canvas.height + spacing * 2; y += spacing) {
+//           points.push(new Point(x, y));
+//         }
+//       }
+//     };
+
+//     const draw = () => {
+//       ctx.clearRect(0, 0, canvas.width, canvas.height);
+//       ctx.lineWidth = 1; // Thicker lines? Keep 1 for elegance, opacity does the work.
+
+//       // We calculate rows based on the extended grid size
+//       const rows = Math.ceil((canvas.height + spacing * 3) / spacing);
+
+//       for (let i = 0; i < points.length; i++) {
+//         const p = points[i];
+//         p.update();
+
+//         // 1. Draw Dot (Larger & Darker)
+//         // Alternating colors for dots too
+//         ctx.fillStyle = (i % 2 === 0) 
+//             ? `rgba(255, 106, 0, ${dotOpacity})`   // Neon Orange
+//             : `rgba(215, 38, 255, ${dotOpacity})`; // Neon Magenta
+            
+//         ctx.beginPath();
+//         ctx.arc(p.x, p.y, dotSize, 0, Math.PI * 2);
+//         ctx.fill();
+
+//         // 2. Draw Lines (Stronger opacity)
+//         const nextP = points[i + 1]; 
+//         const bottomP = points[i + rows];
+
+//         const lineColor = (i % 2 === 0) 
+//             ? `rgba(255, 106, 0, ${lineOpacity})` 
+//             : `rgba(215, 38, 255, ${lineOpacity})`;
+            
+//         ctx.strokeStyle = lineColor;
+
+//         // Draw Right Line
+//         if (nextP && Math.abs(nextP.originX - p.originX) === spacing) {
+//             ctx.beginPath();
+//             ctx.moveTo(p.x, p.y);
+//             ctx.lineTo(nextP.x, nextP.y);
+//             ctx.stroke();
+//         }
+
+//         // Draw Bottom Line
+//         if (bottomP && Math.abs(bottomP.originY - p.originY) === spacing) {
+//             ctx.beginPath();
+//             ctx.moveTo(p.x, p.y);
+//             ctx.lineTo(bottomP.x, bottomP.y);
+//             ctx.stroke();
+//         }
+//       }
+
+//       animationFrameId = requestAnimationFrame(draw);
+//     };
+
+//     const handleResize = () => init();
+//     const handleMouseMove = (e: MouseEvent) => {
+//         const rect = canvas.getBoundingClientRect();
+//         mouse.x = e.clientX - rect.left;
+//         mouse.y = e.clientY - rect.top;
+//     };
+//     const handleMouseDown = () => { isClicked = true; };
+//     const handleMouseUp = () => { isClicked = false; };
+
+//     window.addEventListener("resize", handleResize);
+//     window.addEventListener("mousemove", handleMouseMove);
+//     window.addEventListener("mousedown", handleMouseDown);
+//     window.addEventListener("mouseup", handleMouseUp);
+
+//     init();
+//     draw();
+
+//     return () => {
+//       window.removeEventListener("resize", handleResize);
+//       window.removeEventListener("mousemove", handleMouseMove);
+//       window.removeEventListener("mousedown", handleMouseDown);
+//       window.removeEventListener("mouseup", handleMouseUp);
+//       cancelAnimationFrame(animationFrameId);
+//     };
+//   }, []);
+
+//   return (
+//     <canvas 
+//         ref={canvasRef} 
+//         className="absolute inset-0 w-full h-full pointer-events-auto"
+//         style={{ zIndex: 0 }} 
+//     />
+//   );
+// }
+
+
+
+
 "use client";
 import { useEffect, useRef } from "react";
 
@@ -213,16 +394,16 @@ export default function InteractiveGrid() {
     let mouse = { x: -1000, y: -1000 };
     let isClicked = false;
 
-    // --- VISUAL CONFIGURATION (UPDATED) ---
-    const spacing = 45;          // Slightly wider spacing
-    const dotSize = 5.0         // Larger dots (was 1.5)
-    const dotOpacity = 0.6;      // Much darker dots (was 0.3)
-    const lineOpacity = 0.54;     // Much darker lines (was 0.15)
+    // --- VISUAL CONFIGURATION ---
+    const spacing = 45;          
+    const dotSize = 3.5;        
+    const dotOpacity = 0.6;      
+    const lineOpacity = 0.54;     
     
     // --- PHYSICS CONFIGURATION ---
     const returnSpeed = 0.005; 
-    const magnetStrength = 1;  // Slightly stronger pull
-    const explosionForce = 60;   
+    const magnetStrength = 1;  
+    const explosionForce = 60;    
     
     let points: Point[] = [];
 
@@ -255,7 +436,7 @@ export default function InteractiveGrid() {
             this.vy -= (dy / distance) * force * explosionForce;
           }
         } else {
-          if (distance < 250) { // Increased range slightly
+          if (distance < 250) { 
             const force = (250 - distance) / 250;
             this.vx += (dx / distance) * force * magnetStrength;
             this.vy += (dy / distance) * force * magnetStrength;
@@ -277,11 +458,18 @@ export default function InteractiveGrid() {
     }
 
     const init = () => {
-      points = [];
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      // 🔴 FIX: Measure the PARENT element (Div), not the WINDOW
+      if (canvas.parentElement) {
+        // We set the internal canvas resolution to match the display size 1:1
+        canvas.width = canvas.parentElement.clientWidth;
+        canvas.height = canvas.parentElement.clientHeight;
+      } else {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
 
-      // Extend grid slightly off-screen to prevent edges showing on warp
+      points = [];
+      // Extend grid slightly off-screen
       for (let x = -spacing; x < canvas.width + spacing * 2; x += spacing) {
         for (let y = -spacing; y < canvas.height + spacing * 2; y += spacing) {
           points.push(new Point(x, y));
@@ -291,26 +479,23 @@ export default function InteractiveGrid() {
 
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.lineWidth = 1; // Thicker lines? Keep 1 for elegance, opacity does the work.
-
-      // We calculate rows based on the extended grid size
+      
       const rows = Math.ceil((canvas.height + spacing * 3) / spacing);
 
       for (let i = 0; i < points.length; i++) {
         const p = points[i];
         p.update();
 
-        // 1. Draw Dot (Larger & Darker)
-        // Alternating colors for dots too
+        // 1. Draw Dot
         ctx.fillStyle = (i % 2 === 0) 
-            ? `rgba(255, 106, 0, ${dotOpacity})`   // Neon Orange
-            : `rgba(215, 38, 255, ${dotOpacity})`; // Neon Magenta
+            ? `rgba(255, 106, 0, ${dotOpacity})`   
+            : `rgba(215, 38, 255, ${dotOpacity})`; 
             
         ctx.beginPath();
         ctx.arc(p.x, p.y, dotSize, 0, Math.PI * 2);
         ctx.fill();
 
-        // 2. Draw Lines (Stronger opacity)
+        // 2. Draw Lines
         const nextP = points[i + 1]; 
         const bottomP = points[i + rows];
 
@@ -320,7 +505,6 @@ export default function InteractiveGrid() {
             
         ctx.strokeStyle = lineColor;
 
-        // Draw Right Line
         if (nextP && Math.abs(nextP.originX - p.originX) === spacing) {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
@@ -328,7 +512,6 @@ export default function InteractiveGrid() {
             ctx.stroke();
         }
 
-        // Draw Bottom Line
         if (bottomP && Math.abs(bottomP.originY - p.originY) === spacing) {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
@@ -341,15 +524,20 @@ export default function InteractiveGrid() {
     };
 
     const handleResize = () => init();
+    
     const handleMouseMove = (e: MouseEvent) => {
+        // 🔴 FIX: Get exact position relative to canvas, accounting for scrolling/layout
         const rect = canvas.getBoundingClientRect();
         mouse.x = e.clientX - rect.left;
         mouse.y = e.clientY - rect.top;
     };
+    
     const handleMouseDown = () => { isClicked = true; };
     const handleMouseUp = () => { isClicked = false; };
 
     window.addEventListener("resize", handleResize);
+    // Listen for mouse moves on the CANVAS specifically (or window if you prefer global capture)
+    // Using window ensures we catch movement even if we drift slightly off the pixels
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mousedown", handleMouseDown);
     window.addEventListener("mouseup", handleMouseUp);

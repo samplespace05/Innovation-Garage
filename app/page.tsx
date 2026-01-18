@@ -765,7 +765,7 @@ export default function Home() {
                 
                 <div className="inline-flex items-center gap-3 px-4 py-1 bg-surface-card/80 backdrop-blur-sm border border-highlight/30 transform hover:-translate-y-1 transition-transform mb-4 pixel-corners pointer-events-auto">
                     <span className="w-2 h-2 bg-primary animate-pulse shadow-[0_0_8px_#FF6A00]"></span>
-                    <span className="text-highlight text-lg font-pixel uppercase tracking-widest">Est. 2016 // Cyber-Retro</span>
+                    <span className="text-highlight text-lg font-pixel uppercase tracking-widest">Est. 2026 // NIT Warangal</span>
                 </div>
 
                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-pixel uppercase text-text-main leading-[0.9] tracking-normal max-w-6xl drop-shadow-[0_4px_0_rgba(215,38,255,0.4)] pointer-events-auto">
@@ -803,12 +803,12 @@ export default function Home() {
             <div className="max-w-[1280px] mx-auto relative z-10">
                 <div className="mb-16 flex flex-col md:flex-row justify-between items-end gap-6 border-b border-white/10 pb-8">
                     <div>
-                        <span className="text-primary font-pixel text-xl uppercase tracking-widest mb-2 block">01 // Who We Are</span>
+                        <span className="text-primary font-pixel text-xl uppercase tracking-widest mb-2 block">01 // Who Are We</span>
                         <h2 className="text-5xl md:text-6xl font-pixel uppercase text-text-main leading-none">
                             About The <span className="text-secondary">Garage</span>
                         </h2>
                     </div>
-                    <p className="max-w-md text-text-main/60 font-display text-sm text-right hidden md:block">
+                    <p className="max-w-md text-text-main/60 font-display text-l text-right hidden md:block">
                         A collaborative ecosystem where students experiment without fear of failure.
                     </p>
                 </div>
@@ -858,7 +858,7 @@ We bring students from diverse backgrounds together to learn and build side by s
             <div className="max-w-[1400px] mx-auto relative z-10">
                 <div className="flex flex-wrap justify-between items-end mb-12 gap-4">
                     <div>
-                        <span className="text-highlight font-pixel text-xl uppercase tracking-widest mb-2 block">02 // Rewind</span>
+                        <span className="text-highlight font-pixel text-xl uppercase tracking-widest mb-2 block">03 // Rewind</span>
                         <h2 className="text-5xl md:text-6xl text-text-main font-pixel uppercase">Past <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Events</span></h2>
                     </div>
                 </div>

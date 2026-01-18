@@ -145,30 +145,191 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useState } from "react";
+import LinkedIn from "next-auth/providers/linkedin";
 
 // Mock Data matching code1.html structure
+// const teamData = {
+//   Startup: [
+//     { name: "David Kim", role: "Addl. Sec", dept: "Operations Dept.", img: "https://randomuser.me/api/portraits/men/32.jpg", link: "linkedinlink"},
+//     { name: "Sarah J.", role: "Executive", dept: "Outreach Dept.", img: "https://randomuser.me/api/portraits/women/44.jpg", link: "linkedinlink"},
+//     { name: "Mike Chang", role: "Executive", dept: "Incubation Dept.", img: "https://randomuser.me/api/portraits/men/22.jpg", link: "linkedinlink" },
+//     { name: "Priya P.", role: "Executive", dept: "Events Dept.", img: "https://randomuser.me/api/portraits/women/28.jpg" , link: "linkedinlink"},
+//   ],
+//   "AI Wing": [
+//     { name: "Leo Turner", role: "Addl. Sec", dept: "Research Dept.", img: "https://randomuser.me/api/portraits/men/54.jpg", link: "linkedinlink" },
+//     { name: "Elena R.", role: "Executive", dept: "NLP Dept.", img: "https://randomuser.me/api/portraits/women/65.jpg" , link: "linkedinlink"},
+//   ],
+//   Tech: [
+//     { name: "Jordan Lee", role: "Addl. Sec", dept: "Dev Dept.", img: "https://randomuser.me/api/portraits/men/85.jpg" , link: "linkedinlink"},
+//     { name: "Alice Wu", role: "Executive", dept: "DevOps Dept.", img: "https://randomuser.me/api/portraits/women/33.jpg" , link: "linkedinlink"},
+//     { name: "Raj M.", role: "Executive", dept: "Security Dept.", img: "https://randomuser.me/api/portraits/men/11.jpg" , link: "linkedinlink"},
+//   ],
+//   ECC: [
+//     { name: "Sophia Chen", role: "Addl. Sec", dept: "Comms Dept.", img: "https://randomuser.me/api/portraits/women/12.jpg" , link: "linkedinlink"},
+//     { name: "Tom Baker", role: "Executive", dept: "PR Dept.", img: "https://randomuser.me/api/portraits/men/4.jpg" , link: "linkedinlink"},
+//   ]
+// };
+
+
 const teamData = {
-  Startup: [
-    { name: "David Kim", role: "Addl. Sec", dept: "Operations Dept.", img: "https://randomuser.me/api/portraits/men/32.jpg" },
-    { name: "Sarah J.", role: "Executive", dept: "Outreach Dept.", img: "https://randomuser.me/api/portraits/women/44.jpg" },
-    { name: "Mike Chang", role: "Executive", dept: "Incubation Dept.", img: "https://randomuser.me/api/portraits/men/22.jpg" },
-    { name: "Priya P.", role: "Executive", dept: "Events Dept.", img: "https://randomuser.me/api/portraits/women/28.jpg" },
+  ECC: [
+    { 
+      name: "Avdhesh Mehta", 
+      role: "Addl. Sec", 
+      dept: "MME Dept. - 4th Year", 
+      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Avdhesh", 
+      link: "" 
+    },
+    { 
+      name: "Naitik Lunkad", 
+      role: "Executive", 
+      dept: "CHEM Dept. - 3rd Year", 
+      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Naitik", 
+      link: "https://www.linkedin.com/in/naitik-lunkad-664937349/" 
+    },
+    { 
+      name: "Vikalp Saxena", 
+      role: "Executive", 
+      dept: "BT Dept. - 3rd Year", 
+      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Vikalp", 
+      link: "https://www.linkedin.com/in/vikalp-saxena-751a27206/" 
+    },
+    { 
+      name: "K Jnana Vaishnavi", 
+      role: "Executive", 
+      dept: "CHEM Dept. - 3rd Year", 
+      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Vaishnavi", 
+      link: "https://www.linkedin.com/in/vaishnavi-kuppa-436650301/" 
+    },
+    { 
+      name: "Vatsal Saini", 
+      role: "Executive", 
+      dept: "MECH Dept. - 2nd Year", 
+      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Vatsal", 
+      link: "https://www.linkedin.com/in/vatsal-saini-b7bb23323/" 
+    }
   ],
   "AI Wing": [
-    { name: "Leo Turner", role: "Addl. Sec", dept: "Research Dept.", img: "https://randomuser.me/api/portraits/men/54.jpg" },
-    { name: "Elena R.", role: "Executive", dept: "NLP Dept.", img: "https://randomuser.me/api/portraits/women/65.jpg" },
+    { 
+      name: "Anirvesh Mangipudi", 
+      role: "Addl. Sec", 
+      dept: "ECE Dept. - 3rd Year", 
+      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Anirvesh", 
+      link: "https://www.linkedin.com/in/anirvesh-mangipudi-7112222b7/" 
+    },
+    { 
+      name: "Vedant Amit Agrawal", 
+      role: "Executive", 
+      dept: "CSE Dept. - 3rd Year", 
+      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Vedant", 
+      link: "https://www.linkedin.com/in/vedant-agrawal-0ba2a7325/" 
+    },
+    { 
+      name: "A Mukesh Reddy", 
+      role: "Executive", 
+      dept: "BT Dept. - 2nd Year", 
+      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Mukesh", 
+      link: "https://www.linkedin.com/in/0xmukesh/" 
+    }
   ],
   Tech: [
-    { name: "Jordan Lee", role: "Addl. Sec", dept: "Dev Dept.", img: "https://randomuser.me/api/portraits/men/85.jpg" },
-    { name: "Alice Wu", role: "Executive", dept: "DevOps Dept.", img: "https://randomuser.me/api/portraits/women/33.jpg" },
-    { name: "Raj M.", role: "Executive", dept: "Security Dept.", img: "https://randomuser.me/api/portraits/men/11.jpg" },
+    { 
+      name: "Aayush A Singh", 
+      role: "Addl. Sec", 
+      dept: "EEE Dept. - 3rd Year", 
+      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Aayush", 
+      link: "https://www.linkedin.com/in/aayush-singh-1413ab283/" 
+    },
+    { 
+      name: "Trupti S Aggarwal", 
+      role: "Executive", 
+      dept: "MnC Dept. - 2nd Year", 
+      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Trupti", 
+      link: "https://www.linkedin.com/in/trupti-aggarwal-a91670350/" 
+    },
+    { 
+      name: "Don Roy Chacko", 
+      role: "Executive", 
+      dept: "CSE Dept. - 2nd Year", 
+      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Don", 
+      link: "https://www.linkedin.com/in/don-chacko/" 
+    },
+    { 
+      name: "Goutham Koushik Sai", 
+      role: "Executive", 
+      dept: "MECH Dept. - 2nd Year", 
+      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Goutham", 
+      link: "https://www.linkedin.com/in/koushik-sai-goutham-a6b622333/" 
+    },
+    { 
+      name: "Ashutosh S Bhat", 
+      role: "Executive", 
+      dept: "ECE Dept. - 2nd Year", 
+      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Ashutosh", 
+      link: "https://www.linkedin.com/in/ashutosh-b-365206328/" 
+    }
   ],
-  ECC: [
-    { name: "Sophia Chen", role: "Addl. Sec", dept: "Comms Dept.", img: "https://randomuser.me/api/portraits/women/12.jpg" },
-    { name: "Tom Baker", role: "Executive", dept: "PR Dept.", img: "https://randomuser.me/api/portraits/men/4.jpg" },
+  Design: [
+    { 
+      name: "Mokshith Srinivas", 
+      role: "Addl. Sec", 
+      dept: "MECH Dept. - 3rd Year", 
+      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Mokshith", 
+      link: "https://www.linkedin.com/in/mokshith-srinivas-surutkar-436322280/" 
+    },
+    { 
+      name: "Hardik Nishad", 
+      role: "Executive", 
+      dept: "CHEM Dept. - 2nd Year", 
+      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Hardik", 
+      link: "https://www.linkedin.com/in/hardik-nishad-1b36aa311/" 
+    },
+    { 
+      name: "Shubhankar Rawat", 
+      role: "Executive", 
+      dept: "BT Dept. - 2nd Year", 
+      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Shubhankar", 
+      link: "https://www.linkedin.com/in/shubhankar-rawat-aa754622a/" 
+    }
+  ],
+  Startup: [
+    { 
+      name: "Akshay Kumar Korepu", 
+      role: "Executive", 
+      dept: "MnC Dept. - 2nd Year", 
+      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Akshay", 
+      link: "https://www.linkedin.com/in/akshaykumarkorepu/" 
+    },
+    { 
+      name: "Shambhavi Dhange", 
+      role: "Executive", 
+      dept: "MnC Dept. - 2nd Year", 
+      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Shambhavi", 
+      link: "https://www.linkedin.com/in/shambhavi-dhange-768049343/" 
+    },
+    { 
+      name: "Atharv Kaushik", 
+      role: "Executive", 
+      dept: "CHEM Dept. - 2nd Year", 
+      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Atharv", 
+      link: "https://www.linkedin.com/in/atharvkaushik/" 
+    },
+    { 
+      name: "M Rithik", 
+      role: "Executive", 
+      dept: "BT Dept. - 2nd Year", 
+      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Rithik", 
+      link: "https://www.linkedin.com/in/rithik-m-295a13389/" 
+    },
+    { 
+      name: "Mrinaal Gupta", 
+      role: "Executive", 
+      dept: "CSE(AI DS) Dept. - 2nd Year", 
+      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Mrinaal", 
+      link: "https://www.linkedin.com/in/mrinaal-gupta-52240a279/" 
+    }
   ]
 };
-
 export default function Teams() {
   const [activeTab, setActiveTab] = useState<keyof typeof teamData>("Startup");
 
@@ -312,7 +473,7 @@ export default function Teams() {
                         member.role === 'Addl. Sec' 
                         ? 'hover:bg-secondary hover:border-secondary' 
                         : 'hover:bg-primary hover:border-primary'
-                    }`} href="#">
+                    }`} href={member.link}>
                       <span className="material-symbols-outlined text-lg">link</span> Connect
                     </a>
                   </div>
