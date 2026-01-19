@@ -181,7 +181,7 @@ const teamData = {
       name: "Vatsal Saini", 
       role: "Executive", 
       dept: "MECH Dept. - 2nd Year", 
-      img: "/teams/Vatsal.png", 
+      img: "/teams/Vatsal.jpeg", 
       link: "https://www.linkedin.com/in/vatsal-saini-b7bb23323/" 
     }
   ],
