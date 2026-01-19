@@ -247,7 +247,7 @@
 //                             <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">Cyber Summit 23</h3>
 //                             <p className="text-text-main/60 font-display text-sm mb-4">48 hours of non-stop coding marathon.</p>
 //                             <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
-//                                 <span className="text-xs font-pixel uppercase text-white/50">Oct 12, 2023</span>
+//                                 <span className="text-s font-pixel uppercase text-white/50">Oct 12, 2023</span>
 //                                 <span className="text-primary font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
 //                             </div>
 //                         </div>
@@ -264,7 +264,7 @@
 //                             <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">Design Thinking</h3>
 //                             <p className="text-text-main/60 font-display text-sm mb-4">Prototyping future interfaces & UI.</p>
 //                             <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
-//                                 <span className="text-xs font-pixel uppercase text-white/50">Nov 05, 2023</span>
+//                                 <span className="text-s font-pixel uppercase text-white/50">Nov 05, 2023</span>
 //                                 <span className="text-secondary font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
 //                             </div>
 //                         </div>
@@ -281,7 +281,7 @@
 //                             <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">AI Ethics Forum</h3>
 //                             <p className="text-text-main/60 font-display text-sm mb-4">Debating the ghost in the machine.</p>
 //                             <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
-//                                 <span className="text-xs font-pixel uppercase text-white/50">Dec 10, 2023</span>
+//                                 <span className="text-s font-pixel uppercase text-white/50">Dec 10, 2023</span>
 //                                 <span className="text-highlight font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
 //                             </div>
 //                         </div>
@@ -298,7 +298,7 @@
 //                             <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">Robotics Demo</h3>
 //                             <p className="text-text-main/60 font-display text-sm mb-4">Autonomous systems in action.</p>
 //                             <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
-//                                 <span className="text-xs font-pixel uppercase text-white/50">Jan 15, 2024</span>
+//                                 <span className="text-s font-pixel uppercase text-white/50">Jan 15, 2024</span>
 //                                 <span className="text-primary font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
 //                             </div>
 //                         </div>
@@ -448,7 +448,7 @@
 //                             <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">Cyber Summit 23</h3>
 //                             <p className="text-text-main/60 font-display text-sm mb-4">48 hours of non-stop coding marathon.</p>
 //                             <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
-//                                 <span className="text-xs font-pixel uppercase text-white/50">Oct 12, 2023</span>
+//                                 <span className="text-s font-pixel uppercase text-white/50">Oct 12, 2023</span>
 //                                 <span className="text-primary font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
 //                             </div>
 //                         </div>
@@ -465,7 +465,7 @@
 //                             <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">Design Thinking</h3>
 //                             <p className="text-text-main/60 font-display text-sm mb-4">Prototyping future interfaces & UI.</p>
 //                             <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
-//                                 <span className="text-xs font-pixel uppercase text-white/50">Nov 05, 2023</span>
+//                                 <span className="text-s font-pixel uppercase text-white/50">Nov 05, 2023</span>
 //                                 <span className="text-secondary font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
 //                             </div>
 //                         </div>
@@ -482,7 +482,7 @@
 //                             <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">AI Ethics Forum</h3>
 //                             <p className="text-text-main/60 font-display text-sm mb-4">Debating the ghost in the machine.</p>
 //                             <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
-//                                 <span className="text-xs font-pixel uppercase text-white/50">Dec 10, 2023</span>
+//                                 <span className="text-s font-pixel uppercase text-white/50">Dec 10, 2023</span>
 //                                 <span className="text-highlight font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
 //                             </div>
 //                         </div>
@@ -499,7 +499,7 @@
 //                             <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">Robotics Demo</h3>
 //                             <p className="text-text-main/60 font-display text-sm mb-4">Autonomous systems in action.</p>
 //                             <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
-//                                 <span className="text-xs font-pixel uppercase text-white/50">Jan 15, 2024</span>
+//                                 <span className="text-s font-pixel uppercase text-white/50">Jan 15, 2024</span>
 //                                 <span className="text-primary font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
 //                             </div>
 //                         </div>
@@ -660,7 +660,7 @@
 //                             <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">Cyber Summit 23</h3>
 //                             <p className="text-text-main/60 font-display text-sm mb-4">48 hours of non-stop coding marathon.</p>
 //                             <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
-//                                 <span className="text-xs font-pixel uppercase text-white/50">Oct 12, 2023</span>
+//                                 <span className="text-s font-pixel uppercase text-white/50">Oct 12, 2023</span>
 //                                 <span className="text-primary font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
 //                             </div>
 //                         </div>
@@ -677,7 +677,7 @@
 //                             <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">Design Thinking</h3>
 //                             <p className="text-text-main/60 font-display text-sm mb-4">Prototyping future interfaces & UI.</p>
 //                             <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
-//                                 <span className="text-xs font-pixel uppercase text-white/50">Nov 05, 2023</span>
+//                                 <span className="text-s font-pixel uppercase text-white/50">Nov 05, 2023</span>
 //                                 <span className="text-secondary font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
 //                             </div>
 //                         </div>
@@ -694,7 +694,7 @@
 //                             <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">AI Ethics Forum</h3>
 //                             <p className="text-text-main/60 font-display text-sm mb-4">Debating the ghost in the machine.</p>
 //                             <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
-//                                 <span className="text-xs font-pixel uppercase text-white/50">Dec 10, 2023</span>
+//                                 <span className="text-s font-pixel uppercase text-white/50">Dec 10, 2023</span>
 //                                 <span className="text-highlight font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
 //                             </div>
 //                         </div>
@@ -711,7 +711,7 @@
 //                             <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">Robotics Demo</h3>
 //                             <p className="text-text-main/60 font-display text-sm mb-4">Autonomous systems in action.</p>
 //                             <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
-//                                 <span className="text-xs font-pixel uppercase text-white/50">Jan 15, 2024</span>
+//                                 <span className="text-s font-pixel uppercase text-white/50">Jan 15, 2024</span>
 //                                 <span className="text-primary font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
 //                             </div>
 //                         </div>
@@ -731,6 +731,51 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import InteractiveNodes from "@/components/InteractiveNodes"; // <--- Updated Import
 import IdeasPromo from "@/components/IdeasPromo";
+
+// Past Events Data
+const pastEvents = [
+  {
+    id: 1,
+    title: "Startup Simulation",
+    description: "A hands-on startup game where teams made real-time decisions across tech, finance, and marketing.",
+    date: "Oct 24, 2025",
+    tag: "SHOWCASE",
+    image: "/events/startupsimulation.png",
+    link: "/events",
+    theme: "primary" // Options: primary, secondary, highlight
+  },
+  {
+    id: 2,
+    title: "Ignite 36",
+    description: "A 36-hour hackathon where teams built and pitched solutions to problem statements. Ideas went from concept to demo fast.",
+    date: "Sept 27-28, 2025",
+    tag: "Hackathon",
+    image: "/events/ignite36.png",
+    link: "/events",
+    theme: "secondary"
+  },
+  {
+    id: 3,
+    title: "E-Summit",
+    description: "Focused on inspiring stories, challenges, and opportunities and was highly beneficial for aspiring entrepreneurs.",
+    date: "March, 2024",
+    tag: "Flagship",
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2070&auto=format&fit=crop",
+    link: "/events",
+    theme: "highlight"
+  },
+  {
+    id: 4,
+    title: "Agentic AI workshop",
+    description: "The workshop aimed to provide hands-on experience in building autonomous AI agents using n8n",
+    date: "Oct 8, 2024",
+    tag: "Workshop",
+    image: "/events/agenticai.png",
+    link: "/events",
+    theme: "primary"
+  }
+];
+
 export default function Home() {
   return (
     <>
@@ -866,75 +911,47 @@ We bring students from diverse backgrounds together to learn and build side by s
                 {/* Horizontal Scroll Container */}
                 <div className="flex overflow-x-auto gap-6 pb-8 snap-x scrollbar-thin scrollbar-thumb-primary scrollbar-track-background-main">
                     
-                    {/* Event Card 1 */}
-                    <a className="min-w-[300px] md:min-w-[380px] snap-center group relative block bg-background-main border border-white/10 hover:border-primary transition-all duration-300 pixel-corners" href="/events">
-                        <div className="h-56 w-full overflow-hidden relative border-b border-white/10">
-                            <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" style={{backgroundImage: "url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop')", opacity: 0.8}}></div>
-                            <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                            <span className="absolute top-4 right-4 bg-black/80 text-primary border border-primary px-2 py-1 font-pixel text-lg uppercase tracking-wider">Hackathon</span>
-                        </div>
-                        <div className="p-6">
-                            <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">Startup Simulation</h3>
-                            <p className="text-text-main/60 font-display text-sm mb-4">A hands-on startup game where teams made real-time decisions across tech, finance, and marketing.</p>
-                            <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
-                                <span className="text-xs font-pixel uppercase text-white/50">Oct 12, 2023</span>
-                                <span className="text-primary font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
-                            </div>
-                        </div>
-                    </a>
+                    {pastEvents.map((event) => {
+                        // Strict mapping to keep your exact design colors
+                        const colors = {
+                            primary: {
+                                hover: "hover:border-primary",
+                                overlay: "bg-primary/20",
+                                text: "text-primary",
+                                border: "border-primary"
+                            },
+                            secondary: {
+                                hover: "hover:border-secondary",
+                                overlay: "bg-secondary/20",
+                                text: "text-secondary",
+                                border: "border-secondary"
+                            },
+                            highlight: {
+                                hover: "hover:border-highlight",
+                                overlay: "bg-highlight/20",
+                                text: "text-highlight",
+                                border: "border-highlight"
+                            }
+                        }[event.theme as 'primary' | 'secondary' | 'highlight'];
 
-                    {/* Event Card 2 */}
-                    <a className="min-w-[300px] md:min-w-[380px] snap-center group relative block bg-background-main border border-white/10 hover:border-secondary transition-all duration-300 pixel-corners" href="/events">
-                        <div className="h-56 w-full overflow-hidden relative border-b border-white/10">
-                            <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" style={{backgroundImage: "url('https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=2070&auto=format&fit=crop')", opacity: 0.8}}></div>
-                            <div className="absolute inset-0 bg-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                            <span className="absolute top-4 right-4 bg-black/80 text-secondary border border-secondary px-2 py-1 font-pixel text-lg uppercase tracking-wider">Workshop</span>
-                        </div>
-                        <div className="p-6">
-                            <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">Ignite 36</h3>
-                            <p className="text-text-main/60 font-display text-sm mb-4">A 36-hour hackathon where teams built and pitched solutions to problem statements. Ideas went from concept to demo fast.</p>
-                            <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
-                                <span className="text-xs font-pixel uppercase text-white/50">Nov 05, 2023</span>
-                                <span className="text-secondary font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    {/* Event Card 3 */}
-                    <a className="min-w-[300px] md:min-w-[380px] snap-center group relative block bg-background-main border border-white/10 hover:border-highlight transition-all duration-300 pixel-corners" href="/events">
-                        <div className="h-56 w-full overflow-hidden relative border-b border-white/10">
-                            <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" style={{backgroundImage: "url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2070&auto=format&fit=crop')", opacity: 0.8}}></div>
-                            <div className="absolute inset-0 bg-highlight/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                            <span className="absolute top-4 right-4 bg-black/80 text-highlight border border-highlight px-2 py-1 font-pixel text-lg uppercase tracking-wider">Panel</span>
-                        </div>
-                        <div className="p-6">
-                            <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">E-Summit</h3>
-                            <p className="text-text-main/60 font-display text-sm mb-4">Focused on inspiring
-stories, challenges, and opportunities and was highly beneficial for aspiring
-entrepreneurs.</p>
-                            <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
-                                <span className="text-xs font-pixel uppercase text-white/50">Dec 10, 2023</span>
-                                <span className="text-highlight font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    {/* Event Card 4 */}
-                    <a className="min-w-[300px] md:min-w-[380px] snap-center group relative block bg-background-main border border-white/10 hover:border-primary transition-all duration-300 pixel-corners" href="/events">
-                        <div className="h-56 w-full overflow-hidden relative border-b border-white/10">
-                            <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" style={{backgroundImage: "url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2070&auto=format&fit=crop')", opacity: 0.8}}></div>
-                            <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                            <span className="absolute top-4 right-4 bg-black/80 text-primary border border-primary px-2 py-1 font-pixel text-lg uppercase tracking-wider">Showcase</span>
-                        </div>
-                        <div className="p-6">
-                            <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">Agentic AI workshop</h3>
-                            <p className="text-text-main/60 font-display text-sm mb-4">Autonomous systems in action.</p>
-                            <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
-                                <span className="text-xs font-pixel uppercase text-white/50">Jan 15, 2024</span>
-                                <span className="text-primary font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform">Details {">"}</span>
-                            </div>
-                        </div>
-                    </a>
+                        return (
+                            <a key={event.id} className={`min-w-[300px] md:min-w-[380px] snap-center group relative block bg-background-main border border-white/10 ${colors.hover} transition-all duration-300 pixel-corners`} href={event.link}>
+                                <div className="h-56 w-full overflow-hidden relative border-b border-white/10">
+                                    <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" style={{backgroundImage: `url('${event.image}')`, opacity: 0.8}}></div>
+                                    <div className={`absolute inset-0 ${colors.overlay} opacity-0 group-hover:opacity-100 transition-opacity`}></div>
+                                    <span className={`absolute top-4 right-4 bg-black/80 ${colors.text} border ${colors.border} px-2 py-1 font-pixel text-lg uppercase tracking-wider`}>{event.tag}</span>
+                                </div>
+                                <div className="p-6">
+                                    <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">{event.title}</h3>
+                                    <p className="text-text-main/60 font-display text-sm mb-4">{event.description}</p>
+                                    <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
+                                        <span className="text-s font-pixel uppercase text-white/50">{event.date}</span>
+                                        <span className={`${colors.text} font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform`}>Details {">"}</span>
+                                    </div>
+                                </div>
+                            </a>
+                        );
+                    })}
 
                 </div>
             </div>

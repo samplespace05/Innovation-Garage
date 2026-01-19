@@ -153,35 +153,35 @@ const teamData = {
       name: "Avdhesh Mehta", 
       role: "Addl. Sec", 
       dept: "MME Dept. - 4th Year", 
-      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Avdhesh", 
+      img: "/teams/Avdhesh.png", 
       link: "" 
     },
     { 
       name: "Naitik Lunkad", 
       role: "Executive", 
       dept: "CHEM Dept. - 3rd Year", 
-      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Naitik", 
+      img: "/teams/Naitik.png", 
       link: "https://www.linkedin.com/in/naitik-lunkad-664937349/" 
     },
     { 
       name: "Vikalp Saxena", 
       role: "Executive", 
       dept: "BT Dept. - 3rd Year", 
-      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Vikalp", 
+      img: "/teams/Vikalp.png", 
       link: "https://www.linkedin.com/in/vikalp-saxena-751a27206/" 
     },
     { 
       name: "K Jnana Vaishnavi", 
       role: "Executive", 
       dept: "CHEM Dept. - 3rd Year", 
-      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Vaishnavi", 
+      img: "/teams/Vaishnavi.png", 
       link: "https://www.linkedin.com/in/vaishnavi-kuppa-436650301/" 
     },
     { 
       name: "Vatsal Saini", 
       role: "Executive", 
       dept: "MECH Dept. - 2nd Year", 
-      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Vatsal", 
+      img: "/teams/Vatsal.png", 
       link: "https://www.linkedin.com/in/vatsal-saini-b7bb23323/" 
     }
   ],
@@ -190,21 +190,21 @@ const teamData = {
       name: "Anirvesh Mangipudi", 
       role: "Addl. Sec", 
       dept: "ECE Dept. - 3rd Year", 
-      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Anirvesh", 
+      img: "/teams/Anirvesh.png", 
       link: "https://www.linkedin.com/in/anirvesh-mangipudi-7112222b7/" 
     },
     { 
       name: "Vedant Amit Agrawal", 
       role: "Executive", 
       dept: "CSE Dept. - 3rd Year", 
-      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Vedant", 
+      img: "/teams/Vedant.png", 
       link: "https://www.linkedin.com/in/vedant-agrawal-0ba2a7325/" 
     },
     { 
       name: "A Mukesh Reddy", 
       role: "Executive", 
       dept: "BT Dept. - 2nd Year", 
-      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Mukesh", 
+      img: "/teams/Mukesh.png", 
       link: "https://www.linkedin.com/in/0xmukesh/" 
     }
   ],
@@ -213,35 +213,35 @@ const teamData = {
       name: "Aayush A Singh", 
       role: "Addl. Sec", 
       dept: "EEE Dept. - 3rd Year", 
-      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Aayush", 
+      img: "/teams/Aayush.png", 
       link: "https://www.linkedin.com/in/aayush-singh-1413ab283/" 
     },
     { 
       name: "Trupti S Aggarwal", 
       role: "Executive", 
       dept: "MnC Dept. - 2nd Year", 
-      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Trupti", 
+      img: "/teams/Trupti.png", 
       link: "https://www.linkedin.com/in/trupti-aggarwal-a91670350/" 
     },
     { 
       name: "Don Roy Chacko", 
       role: "Executive", 
       dept: "CSE Dept. - 2nd Year", 
-      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Don", 
+      img: "/teams/Don.png", 
       link: "https://www.linkedin.com/in/don-chacko/" 
     },
     { 
       name: "Goutham Koushik Sai", 
       role: "Executive", 
       dept: "MECH Dept. - 2nd Year", 
-      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Goutham", 
+      img: "/teams/Goutham.png", 
       link: "https://www.linkedin.com/in/koushik-sai-goutham-a6b622333/" 
     },
     { 
       name: "Ashutosh S Bhat", 
       role: "Executive", 
       dept: "ECE Dept. - 2nd Year", 
-      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Ashutosh", 
+      img: "/teams/Ashutosh.png", 
       link: "https://www.linkedin.com/in/ashutosh-b-365206328/" 
     }
   ],
@@ -250,21 +250,21 @@ const teamData = {
       name: "Mokshith Srinivas", 
       role: "Addl. Sec", 
       dept: "MECH Dept. - 3rd Year", 
-      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Mokshith", 
+      img: "/teams/Mokshith.png", 
       link: "https://www.linkedin.com/in/mokshith-srinivas-surutkar-436322280/" 
     },
     { 
       name: "Hardik Nishad", 
       role: "Executive", 
       dept: "CHEM Dept. - 2nd Year", 
-      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Hardik", 
+      img: "/teams/Hardik.png", 
       link: "https://www.linkedin.com/in/hardik-nishad-1b36aa311/" 
     },
     { 
       name: "Shubhankar Rawat", 
       role: "Executive", 
       dept: "BT Dept. - 2nd Year", 
-      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Shubhankar", 
+      img: "/teams/Shubhankar.png", 
       link: "https://www.linkedin.com/in/shubhankar-rawat-aa754622a/" 
     }
   ],
@@ -273,35 +273,35 @@ const teamData = {
       name: "Akshay Kumar Korepu", 
       role: "Executive", 
       dept: "MnC Dept. - 2nd Year", 
-      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Akshay", 
+      img: "/teams/Akshay.png", 
       link: "https://www.linkedin.com/in/akshaykumarkorepu/" 
     },
     { 
       name: "Shambhavi Dhange", 
       role: "Executive", 
       dept: "MnC Dept. - 2nd Year", 
-      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Shambhavi", 
+      img: "/teams/Shambhavi.png", 
       link: "https://www.linkedin.com/in/shambhavi-dhange-768049343/" 
     },
     { 
       name: "Atharv Kaushik", 
       role: "Executive", 
       dept: "CHEM Dept. - 2nd Year", 
-      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Atharv", 
+      img: "/teams/Atharv.png", 
       link: "https://www.linkedin.com/in/atharvkaushik/" 
     },
     { 
       name: "M Rithik", 
       role: "Executive", 
       dept: "BT Dept. - 2nd Year", 
-      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Rithik", 
+      img: "/teams/Rithik.png", 
       link: "https://www.linkedin.com/in/rithik-m-295a13389/" 
     },
     { 
       name: "Mrinaal Gupta", 
       role: "Executive", 
       dept: "CSE(AI DS) Dept. - 2nd Year", 
-      img: "https://api.dicebear.com/7.x/miniavs/svg?seed=Mrinaal", 
+      img: "/teams/Mrinaal.png", 
       link: "https://www.linkedin.com/in/mrinaal-gupta-52240a279/" 
     }
   ]
@@ -331,7 +331,7 @@ export default function Teams() {
                 </span>
                 <span className="text-lg font-bold text-text-main tracking-widest uppercase">Core Command</span>
               </div>
-              <h1 className="text-4xl md:text-6xl font-silkscreen font-bold leading-tight tracking-tight text-text-main mb-4 uppercase">
+              <h1 className="text-4xl md:text-6xl font-arial font-bold leading-tight tracking-tight text-text-main mb-4 uppercase">
                 Leadership
               </h1>
               <p className="text-gray-400 text-xl max-w-2xl mx-auto font-pixel">Guiding the vision and execution of student innovation.</p>
@@ -354,7 +354,7 @@ export default function Teams() {
                     <div className="absolute inset-0 border-2 border-transparent group-hover:border-secondary/50 pointer-events-none"></div>
                   </div>
                   <div className="text-center sm:text-left flex-1">
-                    <h3 className="text-3xl font-bold text-text-main font-silkscreen mb-2 uppercase">Dr. Eleanor Vance</h3>
+                    <h3 className="text-3xl font-bold text-text-main font-arial mb-2 uppercase">Dr. Eleanor Vance</h3>
                     <div className="inline-block bg-primary/10 px-2 py-0.5 mb-3 border border-primary/20">
                       <p className="text-primary text-lg font-bold uppercase tracking-wide font-pixel">Faculty Advisor</p>
                     </div>
@@ -375,14 +375,14 @@ export default function Teams() {
                 <div className="flex flex-col sm:flex-row gap-8 items-center sm:items-start">
                   <div className="w-32 h-32 overflow-hidden border-2 border-primary shrink-0 bg-background-main">
                     <img 
-                      src="https://api.dicebear.com/7.x/miniavs/svg?seed=Akshay" 
+                      src="/teams/Lavanya.png" 
                       alt="General Secretary" 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                       style={{ imageRendering: "pixelated" }}
                     />
                   </div>
                   <div className="text-center sm:text-left flex-1">
-                    <h3 className="text-3xl font-bold text-text-main font-silkscreen mb-2 uppercase">Lavanya Trivedi</h3>
+                    <h3 className="text-3xl font-bold text-text-main font-arial mb-2 uppercase">Lavanya Trivedi</h3>
                     <div className="inline-block bg-primary/10 px-2 py-0.5 mb-3 border border-primary/20">
                       <p className="text-primary text-lg font-bold uppercase tracking-wide font-pixel">General Secretary</p>
                     </div>
@@ -400,7 +400,7 @@ export default function Teams() {
           {/* SQUADRONS SECTION */}
           <section className="w-full">
             <div className="flex flex-col items-center mb-10 text-center">
-              <h2 className="text-4xl md:text-5xl font-silkscreen font-bold text-text-main mb-2 uppercase">
+              <h2 className="text-4xl md:text-6xl font-arial font-bold text-text-main mb-2 uppercase">
                 Squadrons
               </h2>
               <div className="h-1 w-32 bg-gradient-to-r from-secondary via-white to-primary mb-6"></div>
@@ -440,7 +440,7 @@ export default function Teams() {
                         style={{ imageRendering: "pixelated" }}
                       />
                     </div>
-                    <h4 className="text-2xl font-bold text-text-main font-silkscreen uppercase tracking-wide">{member.name}</h4>
+                    <h4 className="text-2xl font-bold text-text-main font-arial uppercase tracking-wide">{member.name}</h4>
                     <p className={`text-lg uppercase mb-1 font-bold font-pixel ${member.role === 'Addl. Sec' ? 'text-secondary' : 'text-primary'}`}>
                       {member.role}
                     </p>

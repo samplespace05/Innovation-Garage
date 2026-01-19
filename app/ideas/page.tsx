@@ -686,18 +686,18 @@
 //                         <label className="block text-sm font-bold tracking-widest font-pixel uppercase pl-1 text-white">Department</label>
 //                          <div className="relative">
 //                             <select name="department" className="w-full bg-[#050505] border-2 border-gray-700 py-3 px-4 text-white font-pixel appearance-none focus:border-neon-magenta focus:shadow-[0_0_15px_rgba(215,38,255,0.4)] outline-none transition-all cursor-pointer">
-//                                 <option>CSE</option>
-//                                 <option>CSE (AIDS)</option>
-//                                 <option>MNC</option>
-//                                 <option>ECE</option>
-//                                 <option>ECE(VLSI)</option>
-//                                 <option>EEE</option>
-//                                 <option>MECH</option>
-//                                 <option>CHEM</option>
-//                                 <option>CIVIL</option>
-//                                 <option>BioTech</option>
-//                                 <option>MME</option>
-//                                 <option>OTHER</option>
+                                // <option>CSE</option>
+                                // <option>CSE (AIDS)</option>
+                                // <option>MNC</option>
+                                // <option>ECE</option>
+                                // <option>ECE(VLSI)</option>
+                                // <option>EEE</option>
+                                // <option>MECH</option>
+                                // <option>CHEM</option>
+                                // <option>CIVIL</option>
+                                // <option>BioTech</option>
+                                // <option>MME</option>
+                                // <option>OTHER</option>
 //                             </select>
 //                             <span className="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-neon-orange">expand_more</span>
 //                         </div>
@@ -926,10 +926,17 @@ return (
                     <div className="relative">
                     <select name="department" className="w-full bg-[#050505] border-2 border-gray-700 py-3 px-4 text-white font-pixel appearance-none focus:border-neon-magenta focus:shadow-[0_0_15px_rgba(215,38,255,0.4)] outline-none transition-all cursor-pointer">
                         <option>CSE</option>
+                        <option>CSE (AIDS)</option>
+                        <option>MNC</option>
                         <option>ECE</option>
+                        <option>ECE(VLSI)</option>
                         <option>EEE</option>
                         <option>MECH</option>
+                        <option>CHEM</option>
                         <option>CIVIL</option>
+                        <option>BioTech</option>
+                        <option>MME</option>
+                        <option>OTHER</option>
                     </select>
                     <span className="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-neon-orange">expand_more</span>
                 </div>

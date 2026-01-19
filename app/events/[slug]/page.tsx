@@ -324,15 +324,15 @@ type EventData = {
 };
 
 // 2. Add gallery images to each event in the database
-const eventsDatabase: Record<string, EventData> = {
-  "founder-stories": {
-    title: "FOUNDER STORIES",
-    date: "NOV 20, 2024",
-    location: "Main Auditorium",
-    participants: "150+ Attendees",
-    brief: "Unfiltered stories of failure, pivot, and ultimate success from alumni.",
-    fullDescription: "An intimate evening with three successful alumni founders who returned to campus to share the brutal truths of entrepreneurship. Unlike typical success stories, this session focused on the 'near-death experiences' of their startups. They discussed fundraising rejections, co-founder disputes, and the pivot points that saved their companies.",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000",
+const eventsDatabase: Record<string, EventData> = { 
+  "induction25": {
+    title: "FRESHERS INDUCTION 25 ",
+    date: "SEPT 22, 2025",
+    location: "CCPD Hall",
+    participants: "100+ Attendees",
+    brief: "Introducing freshers to IG at IG NITW—its vision, opportunities, and how they can grow, lead, and create impact from day one.",
+    fullDescription: "The Freshers’ Induction at IG NITW focused on introducing new students to IG, its vision, mission, and role within the institute, while familiarizing them with the opportunities and support it offers. The session highlighted IG’s objectives, activities, and impact, helping freshers understand how they can engage, learn, and grow through IG initiatives. By explaining IG’s structure, culture, and benefits, the induction aimed to encourage participation, build awareness, and inspire students to actively contribute to and make the most of IG during their journey at IG NITW.",
+    image: "/events/induction25.png",
     gallery: [
       "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=1000",
       "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000",
@@ -340,14 +340,14 @@ const eventsDatabase: Record<string, EventData> = {
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1000"
     ]
   },
-  "robotics-showcase": {
-    title: "ROBOTICS SHOWCASE",
-    date: "DEC 15, 2024",
-    location: "Lab Complex B",
-    participants: "50+ Teams",
-    brief: "Live demos of student-built rovers, drones, and automation systems.",
-    fullDescription: "The annual Robotics Showcase featured over 20 working prototypes ranging from agricultural drones to autonomous delivery rovers. The highlight was 'Project Icarus', a solar-powered glider that stayed airborne for 6 hours. Industry experts from Boston Dynamics provided live feedback to the student teams.",
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1000",
+  "ignite36": {
+    title: "IGNITE 36",
+    date: "SEPT 27-28, 2024",
+    location: "IG Building",
+    participants: "70+ Teams // 400+ Participants",
+    brief: "IGNITE 36 is a 36-hour internal hackathon where ideas spark, teams grind, and solutions are built for SIH-level impact.",
+    fullDescription: "IGNITE 36 was a 36-hour internal hackathon organized to prepare and empower teams for the Smart India Hackathon (SIH) by simulating an intense, real-world problem-solving environment. The event brought together passionate innovators to brainstorm, design, and develop impactful solutions within a strict time frame, fostering creativity, collaboration, and technical excellence. Throughout the hackathon, participants worked continuously on SIH problem statements, refining their ideas through rapid prototyping, teamwork, and iterative development. IGNITE 36 served as a platform to test feasibility, improve presentation skills, and strengthen team coordination under pressure. By the end of the event, teams gained valuable hands-on experience, confidence, and clarity—making IGNITE 36 a crucial stepping stone toward success in SIH",
+    image: "/events/ignite36.png",
     gallery: [
       "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1000",
       "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1000",
@@ -355,22 +355,39 @@ const eventsDatabase: Record<string, EventData> = {
       "https://images.unsplash.com/photo-1535378437327-b7149236addf?q=80&w=1000"
     ]
   },
-  "vc-101": {
-    title: "VENTURE CAPITAL 101",
-    date: "JAN 10, 2025",
-    location: "Seminar Hall 4",
-    participants: "80+ Students",
-    brief: "How to pitch your seed round. Understand what investors really want.",
-    fullDescription: "A deep dive into the mind of a VC. We hosted a partner from a leading micro-VC fund who broke down the unit economics of a startup. Students learned how to build a cap table, the difference between pre-money and post-money valuation, and watched a live tear-down of a pitch deck.",
-    image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=1000",
+  "agenticai": {
+    title: "AGENTIC AI WORKSHOP",
+    date: "OCT 8, 2025",
+    location: "CCPD Hall",
+    participants: "150+ Attendees",
+    brief: "The workshop aimed to introduce participants to Agentic AI concepts and provide hands-on experience in building autonomous AI agents using n8n, with real-world automation use cases.",
+    fullDescription: "The Agentic AI workshop focused on introducing participants to the concept of autonomous AI agents through hands-on implementation using n8n. During the session, n8n was used to design intelligent workflows that integrated email triggers and Telegram bots, enabling the creation of AI agents capable of real-time mail alerts, automated responses, and interactive features such as joke generation. Participants learned how agentic systems can make decisions, execute tasks independently, and combine multiple services into a single automation pipeline. The workshop effectively demonstrated practical, no-code to low-code approaches for building functional and engaging AI agents, helping attendees understand real-world applications of Agentic AI beyond theory.",
+    image: "/events/agenticai.png",
     gallery: [
-      "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1000",
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1000",
-      "https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1000",
-      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1000"
+      "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=1000",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000",
+      "https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=1000",
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1000"
+    ]
+  },
+  "startupsimulation": {
+    title: "Startup Simulation",
+    date: "OCT 24, 2025",
+    location: "Seminar hall Complex",
+    participants: "150+ Attendees",
+    brief: "Startup Simulation challenges you to ideate fast, adapt smarter, and conquer real-world startup chaos under pressure.",
+    fullDescription: "Startup Simulation is a high-intensity entrepreneurship challenge designed to test participants’ ability to think, adapt, and execute like real startup founders. Organized by Innovation Garage, NIT Warangal, under Technozion 2025, the event puts teams in dynamic, real-world startup scenarios where decision-making speed and strategic thinking are crucial. Participants receive a random startup idea and must build, pivot, and scale their concept while navigating unpredictable challenges similar to those faced by real entrepreneurs.Throughout the simulation, teams will encounter market shifts, financial constraints, operational hurdles, and competitive pressure, pushing them to collaborate effectively and think on their feet. With exciting prizes at stake, the event encourages innovation, leadership, and problem-solving in a competitive yet engaging environment. Startup Simulation is the perfect platform for aspiring entrepreneurs to experience the thrill of building a startup from scratch and proving their ability to ideate, adapt, and conquer.",
+    image: "/events/startupsimulation.png",
+    gallery: [
+      "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=1000",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000",
+      "https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=1000",
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1000"
     ]
   }
 };
+
+
 
 export default async function EventRecap({ params }: { params: Promise<{ slug: string }> }) {
   
@@ -392,7 +409,7 @@ export default async function EventRecap({ params }: { params: Promise<{ slug: s
                  style={{backgroundImage: `url('${event.image}')`}}></div>
             <div className="relative z-10 max-w-5xl">
                 <span className="bg-neon-orange text-black px-4 py-1 text-xl font-bold uppercase mb-4 inline-block transform -skew-x-12">
-                    Event Archive // {slug}
+                    Event Archive //
                 </span>
                 <h1 className="text-6xl md:text-8xl text-white font-bold leading-none drop-shadow-[4px_4px_0_#D726FF]">
                     {event.title}

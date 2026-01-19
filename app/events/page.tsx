@@ -1282,32 +1282,69 @@ interface EventItem {
 const upcomingEvents: EventItem[] = [
   {
     id: 1,
-    category: "Talks",
-    title: "AI & Ethics Symposium",
-    date: "MAR 12 @ 14:00",
-    description: "Debating the moral code of tomorrow. Join experts dissecting AGI implications.",
-    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000",
-    link: null
-  },
-  {
-    id: 2,
     category: "Hackathons",
-    title: "Midnight Hackathon",
-    date: "APR 05 / 48H",
-    description: "48 hours to build the impossible. Energy drinks provided. Prizes up to $10k.",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000",
+    title: "Velocity '26",
+    date: "JAN 24 / 48H",
+    description: "48 hours to build the impossible. Energy drinks provided. Prizes up to 30000.",
+    image: "/events/velocity.png",
     link: "https://forms.google.com/example"
   },
   {
-    id: 3,
+    id: 2,
     category: "Workshops",
-    title: "Design Sprint",
-    date: "MAY 01 @ 15:00",
+    title: "Agentic AI 2.0",
+    date: "Feb '26",
     description: "From idea to prototype in 3 hours. Validate ideas rapidly.",
     image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1000",
     link: null
   }
 ];
+
+
+// Archive Data
+const archiveEvents = [
+  {
+    id: 1,
+    tag: "Hackathon",
+    icon: "mic", // Material Symbol Name
+    date: "NOV 20 @ 18:00",
+    title: "Ignite '36",
+    description: "Unfiltered stories of failure, pivot, and ultimate success",
+    image: "/events/ignite36.png",
+    link: "/events/ignite36"
+  },
+  {
+    id: 2,
+    tag: "Demo Day",
+    icon: "precision_manufacturing",
+    date: "22 Sept @ 7:00 pm",
+    title: "Freshers Induction",
+    description: "Live demos of student-built rovers and automation systems.",
+    image: "/events/induction25.png",
+    link: "/events/induction25"
+  },
+  {
+    id: 3,
+    tag: "Workshop",
+    icon: "monetization_on",
+    date: "8 Oct @ 6:30 pm",
+    title: "Agentic AI Workshop",
+    description: "The workshop aimed to introduce participants to Agentic AI concepts.",
+    image: "/events/agenticai.png",
+    link: "/events/agenticai"
+  },
+  {
+    id: 4,
+    tag: "Event",
+    icon: "simulation",
+    date: "24 Oct @ 4:30 pm",
+    title: "Startup Simulation",
+    description: "Startup Simulation challenges you to conquer real-world startup chaos.    ",
+    image: "/events/startupsimulation.png",
+    link: "/events/startupsimulation"
+  }
+];
+
 
 export default function Events() {
   const [showRegModal, setShowRegModal] = useState(false);
@@ -1468,92 +1505,44 @@ export default function Events() {
             <div className="h-1 flex-1 bg-surface-card border-b-4 border-dashed border-gray-700"></div>
         </div>
 
-        {/* ARCHIVE GRID (Keep Static for now as per design) */}
+        {/* ARCHIVE GRID */}
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 px-2">
             
-            {/* Archive Card 1 */}
-            <div className="group flex flex-col bg-surface-card border-2 border-neon-orange shadow-retro-orange hover:shadow-[12px_12px_0px_0px_#E0AAFF] hover:-translate-x-1 hover:-translate-y-1 transition-all h-full relative rounded-none">
-                <div className="relative h-64 w-full overflow-hidden border-b-2 border-neon-orange bg-black">
-                    <div className="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100" style={{backgroundImage: "url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000')"}}></div>
-                    <div className="absolute inset-0 bg-neon-orange/20 mix-blend-overlay"></div>
-                    <div className="absolute top-4 left-0 bg-neon-orange border-r-2 border-y-2 border-white px-4 py-1 flex items-center gap-1 shadow-[2px_2px_0_0_#FFF]">
-                        <span className="material-symbols-outlined text-black text-[20px]">mic</span>
-                        <span className="text-black text-xl uppercase tracking-wider font-bold">Fireside</span>
+            {archiveEvents.map((event) => (
+                <div key={event.id} className="group flex flex-col bg-surface-card border-2 border-neon-orange shadow-retro-orange hover:shadow-[12px_12px_0px_0px_#E0AAFF] hover:-translate-x-1 hover:-translate-y-1 transition-all h-full relative rounded-none">
+                    
+                    {/* Image Section */}
+                    <div className="relative h-64 w-full overflow-hidden border-b-2 border-neon-orange bg-black">
+                        <div className="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100" style={{backgroundImage: `url('${event.image}')`}}></div>
+                        <div className="absolute inset-0 bg-neon-orange/20 mix-blend-overlay"></div>
+                        
+                        {/* Corner Tag */}
+                        <div className="absolute top-4 left-0 bg-neon-orange border-r-2 border-y-2 border-white px-4 py-1 flex items-center gap-1 shadow-[2px_2px_0_0_#FFF]">
+                            <span className="material-symbols-outlined text-black text-[20px]">{event.icon}</span>
+                            <span className="text-black text-xl uppercase tracking-wider font-bold">{event.tag}</span>
+                        </div>
                     </div>
-                </div>
-                <div className="p-6 flex flex-col flex-1 gap-5">
-                    <div className="flex justify-between items-start border-b-2 border-dashed border-gray-700 pb-4">
-                        <span className="bg-highlight text-cyber-black px-3 py-1 border-2 border-white text-xl shadow-[3px_3px_0px_0px_#FFF] font-bold">NOV 20 @ 18:00</span>
-                    </div>
-                    <div className="flex-1">
-                        <h3 className="text-warm-white text-4xl uppercase leading-none mb-3 group-hover:text-neon-orange transition-colors underline decoration-4 underline-offset-4 decoration-secondary">Founder Stories</h3>
-                        <p className="text-highlight text-2xl leading-snug line-clamp-3 opacity-80">
-                            {">>"} Unfiltered stories of failure, pivot, and ultimate success from alumni.
-                        </p>
-                    </div>
-                    <div className="pt-2 flex items-center justify-between mt-auto">
-                        <Link href="/events/founder-stories" className="bg-transparent text-neon-orange px-5 py-2 text-xl uppercase hover:bg-neon-orange hover:text-black transition-colors border-2 border-neon-orange font-bold shadow-[2px_2px_0px_0px_#FF6A00] hover:shadow-none translate-x-0 hover:translate-x-1 hover:translate-y-1">
-                            VIEW_RECAP
-                        </Link>
-                    </div>
-                </div>
-            </div>
 
-            {/* Archive Card 2 */}
-            <div className="group flex flex-col bg-surface-card border-2 border-neon-orange shadow-retro-orange hover:shadow-[12px_12px_0px_0px_#E0AAFF] hover:-translate-x-1 hover:-translate-y-1 transition-all h-full relative rounded-none">
-                <div className="relative h-64 w-full overflow-hidden border-b-2 border-neon-orange bg-black">
-                    <div className="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100" style={{backgroundImage: "url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1000')"}}></div>
-                    <div className="absolute inset-0 bg-neon-orange/20 mix-blend-overlay"></div>
-                    <div className="absolute top-4 left-0 bg-neon-orange border-r-2 border-y-2 border-white px-4 py-1 flex items-center gap-1 shadow-[2px_2px_0_0_#FFF]">
-                        <span className="material-symbols-outlined text-black text-[20px]">precision_manufacturing</span>
-                        <span className="text-black text-xl uppercase tracking-wider font-bold">Demo Day</span>
+                    {/* Content Section */}
+                    <div className="p-6 flex flex-col flex-1 gap-5">
+                        <div className="flex justify-between items-start border-b-2 border-dashed border-gray-700 pb-4">
+                            <span className="bg-highlight text-cyber-black px-3 py-1 border-2 border-white text-xl shadow-[3px_3px_0px_0px_#FFF] font-bold">{event.date}</span>
+                        </div>
+                        <div className="flex-1">
+                            <h3 className="text-warm-white text-4xl uppercase leading-none mb-3 group-hover:text-neon-orange transition-colors underline decoration-4 underline-offset-4 decoration-secondary">{event.title}</h3>
+                            <p className="text-highlight text-2xl leading-snug line-clamp-3 opacity-80">
+                                {">>"} {event.description}
+                            </p>
+                        </div>
+                        <div className="pt-2 flex items-center justify-between mt-auto">
+                            <Link href={event.link} className="bg-transparent text-neon-orange px-5 py-2 text-xl uppercase hover:bg-neon-orange hover:text-black transition-colors border-2 border-neon-orange font-bold shadow-[2px_2px_0px_0px_#FF6A00] hover:shadow-none translate-x-0 hover:translate-x-1 hover:translate-y-1">
+                                VIEW_RECAP
+                            </Link>
+                        </div>
                     </div>
                 </div>
-                <div className="p-6 flex flex-col flex-1 gap-5">
-                    <div className="flex justify-between items-start border-b-2 border-dashed border-gray-700 pb-4">
-                        <span className="bg-highlight text-cyber-black px-3 py-1 border-2 border-white text-xl shadow-[3px_3px_0px_0px_#FFF] font-bold">DEC 15 @ 10:00</span>
-                    </div>
-                    <div className="flex-1">
-                        <h3 className="text-warm-white text-4xl uppercase leading-none mb-3 group-hover:text-neon-orange transition-colors underline decoration-4 underline-offset-4 decoration-secondary">Robotics Showcase</h3>
-                        <p className="text-highlight text-2xl leading-snug line-clamp-3 opacity-80">
-                            {">>"} Live demos of student-built rovers and automation systems.
-                        </p>
-                    </div>
-                    <div className="pt-2 flex items-center justify-between mt-auto">
-                        <Link href="/events/robotics-showcase" className="bg-transparent text-neon-orange px-5 py-2 text-xl uppercase hover:bg-neon-orange hover:text-black transition-colors border-2 border-neon-orange font-bold shadow-[2px_2px_0px_0px_#FF6A00] hover:shadow-none translate-x-0 hover:translate-x-1 hover:translate-y-1">
-                            VIEW_RECAP
-                        </Link>
-                    </div>
-                </div>
-            </div>
+            ))}
 
-            {/* Archive Card 3 */}
-            <div className="group flex flex-col bg-surface-card border-2 border-neon-orange shadow-retro-orange hover:shadow-[12px_12px_0px_0px_#E0AAFF] hover:-translate-x-1 hover:-translate-y-1 transition-all h-full relative rounded-none">
-                <div className="relative h-64 w-full overflow-hidden border-b-2 border-neon-orange bg-black">
-                    <div className="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100" style={{backgroundImage: "url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=1000')"}}></div>
-                    <div className="absolute inset-0 bg-neon-orange/20 mix-blend-overlay"></div>
-                    <div className="absolute top-4 left-0 bg-neon-orange border-r-2 border-y-2 border-white px-4 py-1 flex items-center gap-1 shadow-[2px_2px_0_0_#FFF]">
-                        <span className="material-symbols-outlined text-black text-[20px]">monetization_on</span>
-                        <span className="text-black text-xl uppercase tracking-wider font-bold">Finance</span>
-                    </div>
-                </div>
-                <div className="p-6 flex flex-col flex-1 gap-5">
-                    <div className="flex justify-between items-start border-b-2 border-dashed border-gray-700 pb-4">
-                        <span className="bg-highlight text-cyber-black px-3 py-1 border-2 border-white text-xl shadow-[3px_3px_0px_0px_#FFF] font-bold">JAN 10 @ 13:00</span>
-                    </div>
-                    <div className="flex-1">
-                        <h3 className="text-warm-white text-4xl uppercase leading-none mb-3 group-hover:text-neon-orange transition-colors underline decoration-4 underline-offset-4 decoration-secondary">Venture Capital 101</h3>
-                        <p className="text-highlight text-2xl leading-snug line-clamp-3 opacity-80">
-                            {">>"} How to pitch your seed round. Understand what investors really want.
-                        </p>
-                    </div>
-                    <div className="pt-2 flex items-center justify-between mt-auto">
-                        <Link href="/events/vc-101" className="bg-transparent text-neon-orange px-5 py-2 text-xl uppercase hover:bg-neon-orange hover:text-black transition-colors border-2 border-neon-orange font-bold shadow-[2px_2px_0px_0px_#FF6A00] hover:shadow-none translate-x-0 hover:translate-x-1 hover:translate-y-1">
-                            VIEW_RECAP
-                        </Link>
-                    </div>
-                </div>
-            </div>
         </div>
 
         {/* Access Archives Button */}
