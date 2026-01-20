@@ -9,6 +9,7 @@ import { easing } from 'maath'
 const NUM_IMAGES = 280;         
 const RADIUS = 13.4;              
 const IMAGE_SIZE = [2.1, 2.1];  
+const MANUAL_BASE_PATH = "/gallery";
 
 // --- FIBONACCI SPHERE ALGORITHM ---
 const generateSpherePositions = (count: number, radius: number) => {
@@ -71,7 +72,7 @@ function GalleryItem({ position, url, onSelect }: { position: THREE.Vector3, url
 function Sphere({ onSelect }: { onSelect: (url: string) => void }) {
   const positions = useMemo(() => generateSpherePositions(NUM_IMAGES, RADIUS), []);
   const imageUrls = useMemo(() => Array.from({ length: NUM_IMAGES }, (_, i) => 
-    `https://picsum.photos/600/600?random=${i + 500}`
+    `${MANUAL_BASE_PATH}/${i + 1}.jpg`
   ), []);
 
   return (

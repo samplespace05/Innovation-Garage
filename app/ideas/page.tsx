@@ -1322,7 +1322,7 @@ export default function Ideas() {
                       onInput={(e) => {
                         e.currentTarget.value = e.currentTarget.value.replace(/[^0-9]/g, '').slice(0, 10);
                       }}
-                      placeholder="+91 98765 43210"
+                      placeholder="987xx 432xx"
                       className="w-full bg-[#050505] border-2 border-gray-700 py-3 px-4 text-white font-pixel tracking-wider focus:border-neon-magenta focus:shadow-[0_0_15px_rgba(215,38,255,0.4)] outline-none transition-all placeholder-gray-700"
                     />
                     <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-neon-orange opacity-50 group-hover:opacity-100 transition-opacity"></div>
