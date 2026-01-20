@@ -154,3 +154,20 @@ textarea::-webkit-scrollbar-thumb:hover {
 .animate-fade-in-up {
     animation: fadeInUp 0.5s ease-out forwards;
 }
+
+@keyframes spin-reverse {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+.animate-spin-reverse {
+  animation: spin-reverse 1s linear infinite;
+}
+
+@keyframes progress-bar {
+  0% { width: 0%; }
+  50% { width: 70%; }
+  100% { width: 100%; }
+}
+.animate-progress-bar {
+  animation: progress-bar 1.5s ease-in-out infinite;
+}

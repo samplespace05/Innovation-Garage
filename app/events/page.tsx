@@ -1705,28 +1705,39 @@ const archiveEvents = [
 // ==========================================
 // 3. MAIN COMPONENT
 // ==========================================
+
 export default function Events() {
   const [activeFilter, setActiveFilter] = useState<Category>("All");
   
-  // Dynamic Logic States
-  const [serverEvents, setServerEvents] = useState<ServerEvent[]>([]); // Stores live forms
+  // 🛡️ CRITICAL FIX: Ensure useState starts with [] (Empty Array)
+  const [serverEvents, setServerEvents] = useState<ServerEvent[]>([]); 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedEventConfig, setSelectedEventConfig] = useState<any>(null);
-  
-  // UI States
+  const [isFetching, setIsFetching] = useState(true);
   const [toastMessage, setToastMessage] = useState("");
+
+    
 
   // --- FETCH ACTIVE EVENTS ON LOAD ---
   useEffect(() => {
     async function fetchActiveEvents() {
       try {
-        const res = await fetch("/api/events");
+        const res = await fetch("/api/admin", {
+            method: "POST",
+            body: JSON.stringify({ action: "getPublicEvents" })
+        });
+
         const result = await res.json();
-        if (result.success) {
-          setServerEvents(result.data); // Only 'Active' events return here
+        
+        // 🛡️ CRITICAL FIX: Only set state if data is a valid array
+        if (result.success && Array.isArray(result.data)) {
+          setServerEvents(result.data); 
+        } else {
+          setServerEvents([]); // Fallback to empty array
         }
       } catch (e) {
         console.error("System Error: Failed to sync with event database");
+        setServerEvents([]); // Fallback to empty array
       }
     }
     fetchActiveEvents();
@@ -1755,10 +1766,45 @@ export default function Events() {
     //     }
     // }
     // Inside handleRegister
+    async function fetchActiveEvents() {
+      setIsFetching(true);
+      try {
+        const res = await fetch("/api/admin", {
+            method: "POST",
+            body: JSON.stringify({ action: "getPublicEvents" })
+        });
+
+        const result = await res.json();
+        
+        if (result.success && Array.isArray(result.data)) {
+          console.log("✅ Events Loaded:", result.data.length);
+          setServerEvents(result.data); 
+        } else {
+          setServerEvents([]); 
+        }
+      } catch (e) {
+        console.error("❌ Fetch Error:", e);
+        setServerEvents([]); 
+      } finally {
+        setIsFetching(false); // 🟢 Stop loading spinner
+      }
+  }
+
+  // Load on mount
+  useEffect(() => {
+    fetchActiveEvents();
+  }, []);
     const handleRegister = (eventItem: EventItem) => {
     // 1. Check if it's a Dynamic Admin Event
     if (eventItem.adminEventId) {
-        // Look for this ID in the list of events fetched from server
+        
+        // Safety check if data hasn't loaded yet
+        // if (!serverEvents || serverEvents.length === 0) {
+        //     showToast("CONNECTING TO SERVER... PLEASE WAIT.");
+        //     return;
+        // }   
+
+        // Look for this ID in the list fetched from server
         const liveConfig = serverEvents.find(e => e.id === eventItem.adminEventId);
         
         // CHECK STATUS HERE
@@ -1771,9 +1817,12 @@ export default function Events() {
             });
             setIsModalOpen(true);
             return;
+        } else if (liveConfig && liveConfig.status === "Closed") {
+             showToast("REGISTRATION CLOSED FOR THIS EVENT.");
+             return;
         } else {
-            // If status is "Closed", "Archived" or event not found
-            showToast("REGISTRATION CLOSED / NOT YET ACTIVE");
+            // ID exists in frontend code, but not returned by API (Deleted or Archived)
+            showToast("REGISTRATION LINES NOT YET ACTIVE.");
             return;
         }
     }
@@ -1905,11 +1954,19 @@ export default function Events() {
                                 </p>
                             </div>
                             <div className="pt-2 flex items-center justify-between mt-auto">
+                                {/* 🔴 UPDATED BUTTON LOGIC */}
                                 <button 
-                                    onClick={() => handleRegister(event)} // 🔴 PASS FULL EVENT OBJECT
-                                    className="bg-transparent text-secondary px-5 py-2 text-xl uppercase hover:bg-secondary hover:text-white transition-colors border-2 border-secondary font-bold shadow-[2px_2px_0px_0px_#D726FF] hover:shadow-none translate-x-0 hover:translate-x-1 hover:translate-y-1"
+                                    onClick={() => handleRegister(event)} 
+                                    disabled={isFetching && !!event.adminEventId}
+                                    className={`
+                                        px-5 py-2 text-xl uppercase font-bold transition-all border-2 
+                                        ${isFetching && event.adminEventId 
+                                            ? "bg-gray-800 border-gray-600 text-gray-500 cursor-wait" 
+                                            : "bg-transparent text-secondary border-secondary hover:bg-secondary hover:text-white shadow-[2px_2px_0px_0px_#D726FF] hover:shadow-none hover:translate-x-1 hover:translate-y-1"
+                                        }
+                                    `}
                                 >
-                                    REGISTER_{">"}
+                                    {isFetching && event.adminEventId ? "SYNCING..." : "REGISTER_>"}
                                 </button>
                             </div>
                         </div>

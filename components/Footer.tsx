@@ -216,9 +216,9 @@ export default function Footer() {
     setStatus("LOADING");
 
     try {
-      const res = await fetch("/api/newsletter", {
+      const res = await fetch("/api/admin", {
         method: "POST",
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ action: "newsletter", email: email }),
         headers: { "Content-Type": "application/json" }
       });
 

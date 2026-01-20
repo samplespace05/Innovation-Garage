@@ -73,17 +73,116 @@
 // }
 
 
+// "use client";
+// import Navbar from "@/components/Navbar";
+// import SphericalGallery from "@/components/SphericalGallery";
+// import { useState } from "react";
+// import { motion, AnimatePresence } from "framer-motion";
+// import CyberLoader from "@/components/CyberLoader"; // Import the loader
+// import Image from "next/image"; // use Next.js Image for speed
+
+// export default function Gallery() {
+//   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+//   return (
+//     <>
+//       <Navbar />
+      
+//       {/* MAIN CONTAINER */}
+//       <main className="fixed inset-0 bg-[#02020a] overflow-hidden z-0">
+        
+//         {/* 3D SPHERE BACKGROUND */}
+//         <div className="absolute inset-0 z-0">
+//             <SphericalGallery onSelect={setSelectedImage} />
+//         </div>
+
+//         {/* POPUP MODAL */}
+//         <AnimatePresence>
+//             {selectedImage && (
+//                 <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
+                    
+//                     {/* Dark Blur Backdrop (Click to close) */}
+//                     <motion.div 
+//                         initial={{ opacity: 0 }}
+//                         animate={{ opacity: 1 }}
+//                         exit={{ opacity: 0 }}
+//                         onClick={() => setSelectedImage(null)}
+//                         className="absolute inset-0 bg-black/80 backdrop-blur-sm pointer-events-auto cursor-pointer"
+//                     />
+
+//                     {/* The Smaller Square Card */}
+//                     <motion.div 
+//                         initial={{ scale: 0.8, opacity: 0, y: 20 }}
+//                         animate={{ scale: 1, opacity: 1, y: 0 }}
+//                         exit={{ scale: 0.8, opacity: 0, y: 20 }}
+//                         transition={{ type: "spring", damping: 25, stiffness: 300 }}
+//                         className="relative z-50 pointer-events-auto flex flex-col items-center gap-4"
+//                     >
+//                         {/* 1. SMALLER SQUARE IMAGE */}
+//                         <div className="w-[350px] h-[350px] bg-[#111] p-2 border border-white/10 rounded-xl shadow-2xl">
+//                             <div className="w-full h-full overflow-hidden rounded-lg relative group">
+//                                 <img 
+//                                     src={selectedImage} 
+//                                     alt="Memory" 
+//                                     className="w-full h-full object-cover"
+//                                 />
+//                                 {/* Optional: Glossy Shine Effect */}
+//                                 <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none"></div>
+//                             </div>
+//                         </div>
+
+//                         {/* 2. ONE LINE TEXT */}
+//                         <p className="text-gray-400 font-mono text-xs tracking-[0.2em] uppercase">
+//                             // ARCHIVE_REF_{Math.floor(Math.random() * 9999)}
+//                         </p>
+
+//                     </motion.div>
+//                 </div>
+//             )}
+//         </AnimatePresence>
+
+//       </main>
+//     </>
+//   );
+// }
+
+
+
 "use client";
 import Navbar from "@/components/Navbar";
 import SphericalGallery from "@/components/SphericalGallery";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import CyberLoader from "@/components/CyberLoader"; 
+import Image from "next/image"; 
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true); // 1. Add Loading State
+
+  // 2. Add Loader Logic (Simulate 3D Asset Loading)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500); // 2.5 seconds to let the Sphere initialize
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
+      {/* 3. THE LOADER OVERLAY */}
+      <AnimatePresence>
+        {isLoading && (
+            <motion.div 
+                className="fixed inset-0 z-[9999]"
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+            >
+                <CyberLoader />
+            </motion.div>
+        )}
+      </AnimatePresence>
+
       <Navbar />
       
       {/* MAIN CONTAINER */}
