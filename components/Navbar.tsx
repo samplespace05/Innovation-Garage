@@ -102,6 +102,7 @@ export default function Navbar() {
     { name: "Home", path: "/" },
     { name: "Events", path: "/events" },
     { name: "Ideas", path: "/ideas" },
+    { name: "Gallery", path: "/gallery" },
     { name: "Teams", path: "/teams" },
     { name: "Certificates", path: "/certificates" },
   ];

@@ -108,49 +108,78 @@
 // }   
 
 
-import { NextResponse } from "next/server";
+// import { NextResponse } from "next/server";
+
+// export async function POST(req: Request) {
+//   try {
+//     const body = await req.json();
+//     const { password, action, sheetName, ...rest } = body; // Capture all other fields in 'rest'
+
+//     // 1. SECURITY CHECK
+//     const ADMIN_PASS = process.env.ADMIN_PASS;
+//     if (!ADMIN_PASS) {
+//       return NextResponse.json({ success: false, error: "Server Error: Password not configured." }, { status: 500 });
+//     }
+
+//     if (password !== ADMIN_PASS) {
+//       return NextResponse.json({ success: false, error: "ACCESS DENIED: Invalid Credentials" }, { status: 401 });
+//     }
+
+//     // 2. PREPARE PAYLOAD
+//     const GOOGLE_SCRIPT_URL = process.env.NEXTAUTH_URL_GSHEET!; 
+    
+//     // Construct the payload dynamically
+//     const payload = {
+//       action: action || "getAdminData",
+//       sheetName: sheetName,
+//       ...rest // Pass everything else (subject, message, formConfig, etc.)
+//     };
+
+//     // 3. SEND TO GOOGLE SCRIPT
+//     const response = await fetch(GOOGLE_SCRIPT_URL!, {
+//       method: "POST",
+//       headers: { "Content-Type": "text/plain;charset=utf-8" },
+//       body: JSON.stringify(payload),
+//     });
+
+//     const result = await response.json();
+
+//     if (result.result === "success") {
+//       return NextResponse.json({ success: true, data: result.data || result.message }, { status: 200 });
+//     } else {
+//       throw new Error(result.error);
+//     }
+
+//   } catch (error: any) {
+//     return NextResponse.json({ success: false, error: error.message || "Network Error" }, { status: 500 });
+//   }
+// }
+
+
+import { NextResponse } from 'next/server';
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { password, action, sheetName, ...rest } = body; // Capture all other fields in 'rest'
-
-    // 1. SECURITY CHECK
-    const ADMIN_PASS = process.env.ADMIN_PASS;
-    if (!ADMIN_PASS) {
-      return NextResponse.json({ success: false, error: "Server Error: Password not configured." }, { status: 500 });
-    }
-
-    if (password !== ADMIN_PASS) {
-      return NextResponse.json({ success: false, error: "ACCESS DENIED: Invalid Credentials" }, { status: 401 });
-    }
-
-    // 2. PREPARE PAYLOAD
-    const GOOGLE_SCRIPT_URL = process.env.NEXTAUTH_URL_GSHEET; 
-    
-    // Construct the payload dynamically
-    const payload = {
-      action: action || "getAdminData",
-      sheetName: sheetName,
-      ...rest // Pass everything else (subject, message, formConfig, etc.)
-    };
-
-    // 3. SEND TO GOOGLE SCRIPT
-    const response = await fetch(GOOGLE_SCRIPT_URL!, {
-      method: "POST",
-      headers: { "Content-Type": "text/plain;charset=utf-8" },
-      body: JSON.stringify(payload),
+    const googleResponse = await fetch(process.env.NEXTAUTH_URL_GSHEET!, {
+      method: 'POST',
+      body: JSON.stringify(body),
     });
 
-    const result = await response.json();
+    const data = await googleResponse.json();
 
-    if (result.result === "success") {
-      return NextResponse.json({ success: true, data: result.data || result.message }, { status: 200 });
-    } else {
-      throw new Error(result.error);
+    // ---------------------------------------------
+    // 🔍 PRINT GOOGLE BACKEND LOGS IN TERMINAL
+    // ---------------------------------------------
+    if (data.logs && Array.isArray(data.logs)) {
+        console.log("\n👇 GOOGLE APPS SCRIPT LOGS 👇");
+        data.logs.forEach((logLine: string) => console.log(logLine));
+        console.log("👆 -------------------------- 👆\n");
     }
+    // ---------------------------------------------
 
-  } catch (error: any) {
-    return NextResponse.json({ success: false, error: error.message || "Network Error" }, { status: 500 });
+    return NextResponse.json(data);
+  } catch (error) {
+    return NextResponse.json({ success: false, error: "Connection Failed" }, { status: 500 });
   }
 }
