@@ -224,13 +224,6 @@ const teamData = {
       link: "https://www.linkedin.com/in/trupti-aggarwal-a91670350/" 
     },
     { 
-      name: "Don Roy Chacko", 
-      role: "Executive", 
-      dept: "CSE Dept. - 2nd Year", 
-      img: "/teams/Don.png", 
-      link: "https://www.linkedin.com/in/don-chacko/" 
-    },
-    { 
       name: "Goutham Koushik Sai", 
       role: "Executive", 
       dept: "MECH Dept. - 2nd Year", 
@@ -303,6 +296,13 @@ const teamData = {
       dept: "CSE(AI DS) Dept. - 2nd Year", 
       img: "/teams/Mrinaal.png", 
       link: "https://www.linkedin.com/in/mrinaal-gupta-52240a279/" 
+    },
+    { 
+      name: "Shubhankar Rawat", 
+      role: "Executive", 
+      dept: "BT Dept. - 2nd Year", 
+      img: "/teams/Shubhankar.png", 
+      link: "https://www.linkedin.com/in/shubhankar-rawat-aa754622a/" 
     }
   ]
 };

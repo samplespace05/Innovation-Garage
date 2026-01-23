@@ -1667,7 +1667,7 @@ const archiveEvents = [
     date: "NOV 20 @ 18:00",
     title: "Ignite '36",
     description: "Unfiltered stories of failure, pivot, and ultimate success",
-    image: "/events/ignite36.png",
+    image: "/events/ignite36.jpeg",
     link: "/events/ignite36"
   },
   {

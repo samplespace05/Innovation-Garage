@@ -171,3 +171,28 @@ textarea::-webkit-scrollbar-thumb:hover {
 .animate-progress-bar {
   animation: progress-bar 1.5s ease-in-out infinite;
 }
+
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}
+
+/* Optional Glow for Text */
+.text-shadow-glow {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes scanline {
+  0% { top: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.animate-scanline {
+  animation: scanline 3s linear infinite;
+}

@@ -24,7 +24,7 @@ export default function IdeasPromo() {
 
             {/* Massive Title */}
             <h2 className="text-7xl md:text-9xl font-pixel font-bold text-white leading-none">
-                IG_<br/>
+                IMPACT_<br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-orange to-red-500 drop-shadow-[4px_4px_0px_rgba(255,106,0,0.5)]">
                     TANK
                 </span>
@@ -42,7 +42,7 @@ export default function IdeasPromo() {
                     <span>Ideas Pitched</span>
                 </div>
                 <div>
-                    <span className="block text-2xl text-white">$10K+</span>
+                    <span className="block text-2xl text-white">100K+</span>
                     <span>Grant Pool</span>
                 </div>
                 <div>
@@ -69,7 +69,7 @@ export default function IdeasPromo() {
                 <div className="space-y-2">
                     <h3 className="text-3xl font-pixel text-white uppercase">Ready to Launch?</h3>
                     <p className="font-display text-gray-400">
-                        Submissions for the Spring Cohort are open for a limited time.
+                        Submissions for this semester are open for a limited time.
                     </p>
                 </div>
 
