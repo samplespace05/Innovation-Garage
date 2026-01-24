@@ -1115,11 +1115,12 @@ import Link from "next/link";
 const SCHEDULE = [
   { id: 1, time: "04:00 PM", label: "CHECK-IN", status: "completed" },
   { id: 2, time: "07:00 PM", label: "OREINTATION", status: "completed" }, 
-  { id: 5, time: "07:30 PM", label: "ROUND 1", status: "active" },
-  { id: 4, time: "08:10 PM", label: "DINNER", status: "upcoming" },// <--- CURRENT
+  { id: 5, time: "07:30 PM", label: "ROUND 1", status: "completed" },
+  { id: 4, time: "08:10 PM", label: "DINNER", status: "completed" },
+  { id: 7, time: "07:30 PM", label: "ROUND 2", status: "active" },// <--- CURRENT
   { id: 3, time: "12:00 AM", label: "CP1", status: "upcoming" },
   //{ id: 5, time: "08:00 PM", label: "MENTOR ROUND 1", status: "upcoming" },
-  { id: 6, time: "DAY 02", label: "-----", status: "upcoming" },
+  //{ id: 6, time: "DAY 02", label: "-----", status: "upcoming" },
 ];
 
 // Past Events Data (Kept Unchanged)
@@ -1171,7 +1172,7 @@ export default function Home() {
   const [timeLeft, setTimeLeft] = useState("");
     const [showIDModal, setShowIDModal] = useState(false);
   useEffect(() => {
-    const targetDate = new Date("2026-01-24T20:10:00");
+    const targetDate = new Date("2026-01-25T00:10:00");
     const interval = setInterval(() => {
       const now = new Date();
       const diff = targetDate.getTime() - now.getTime();
@@ -1239,7 +1240,7 @@ export default function Home() {
                 </button> */}
                 {/* Countdown Box */}
                 <div className="mt-8 p-6 md:p-8 border-x-4 border-secondary bg-black/60 backdrop-blur-md pointer-events-auto pixel-corners">
-                    <p className="text-gray-200 text-s md:text-5xl tracking-[0.2em] mb-2 text-center font-pixel">DINNER</p>
+                    <p className="text-gray-200 text-s md:text-5xl tracking-[0.2em] mb-2 text-center font-pixel">CHECKPOINT 1</p>
                     <div className="text-5xl md:text-8xl font-mono text-white tracking-widest tabular-nums drop-shadow-md">
                         {timeLeft || "SYNCING..."}
                     </div>
