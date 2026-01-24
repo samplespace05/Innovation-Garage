@@ -1170,7 +1170,7 @@ export default function Home() {
   const [timeLeft, setTimeLeft] = useState("");
     const [showIDModal, setShowIDModal] = useState(false);
   useEffect(() => {
-    const targetDate = new Date("2026-01-25T16:00:00");
+    const targetDate = new Date("2026-01-24T18:50:00");
     const interval = setInterval(() => {
       const now = new Date();
       const diff = targetDate.getTime() - now.getTime();
@@ -1238,7 +1238,7 @@ export default function Home() {
                 </button> */}
                 {/* Countdown Box */}
                 <div className="mt-8 p-6 md:p-8 border-x-4 border-secondary bg-black/60 backdrop-blur-md pointer-events-auto pixel-corners">
-                    <p className="text-gray-400 text-xs md:text-sm tracking-[0.2em] mb-2 text-center font-pixel">Go-Live Countdown</p>
+                    <p className="text-gray-200 text-s md:text-xl tracking-[0.2em] mb-2 text-center font-pixel">Orientation Timer</p>
                     <div className="text-5xl md:text-8xl font-mono text-white tracking-widest tabular-nums drop-shadow-md">
                         {timeLeft || "SYNCING..."}
                     </div>
