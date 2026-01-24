@@ -6,8 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 // MOCK LIVE UPDATES
 const UPDATES = [
   { id: 1, time: "05:51 PM", text: "CCPD-1 Access Code: ccpd@#12" },
-  { id: 2, time: "05:51 AM", text: "CCPD-2 Access Code: pm@cp#25" },
-  //{ id: 3, time: "01:00 PM", text: "Lunch is being served at the Cafeteria." },
+  { id: 2, time: "05:51 PM", text: "CCPD-2 Access Code: pm@cp#25" },
+  { id: 3, time: "07:42 PM", text: "Dinner will be served soon....." },
 ];
 
 export default function LiveComms() {
