@@ -727,403 +727,13 @@
 // //   );
 // // }
 
-// "use client"
-// import Navbar from "@/components/Navbar";
-// import Footer from "@/components/Footer";
-// import InteractiveNodes from "@/components/InteractiveNodes"; // <--- Updated Import
-// import IdeasPromo from "@/components/IdeasPromo";
-
-// // Past Events Data
-// const pastEvents = [
-//   {
-//     id: 1,
-//     title: "Startup Simulation",
-//     description: "A hands-on startup game where teams made real-time decisions across tech, finance, and marketing.",
-//     date: "Oct 24, 2025",
-//     tag: "SHOWCASE",
-//     image: "/events/startupsimulation.png",
-//     link: "/events",
-//     theme: "primary" // Options: primary, secondary, highlight
-//   },
-//   {
-//     id: 2,
-//     title: "Ignite 36",
-//     description: "A 36-hour hackathon where teams built and pitched solutions to problem statements. Ideas went from concept to demo fast.",
-//     date: "Sept 27-28, 2025",
-//     tag: "Hackathon",
-//     image: "/events/ignite36.jpeg",
-//     link: "/events",
-//     theme: "secondary"
-//   },
-//   {
-//     id: 3,
-//     title: "E-Summit",
-//     description: "Focused on inspiring stories, challenges, and opportunities and was highly beneficial for aspiring entrepreneurs.",
-//     date: "March, 2024",
-//     tag: "Flagship",
-//     image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2070&auto=format&fit=crop",
-//     link: "/events",
-//     theme: "highlight"
-//   },
-//   {
-//     id: 4,
-//     title: "Agentic AI workshop",
-//     description: "The workshop aimed to provide hands-on experience in building autonomous AI agents using n8n",
-//     date: "Oct 8, 2024",
-//     tag: "Workshop",
-//     image: "/events/agenticai.png",
-//     link: "/events",
-//     theme: "primary"
-//   }
-// ];
-
-// export default function Home() {
-//   return (
-//     <>
-//       <Navbar />
-//       <main className="bg-background-main text-text-main font-display overflow-x-hidden selection:bg-primary selection:text-background-main">
-        
-//         {/* ================= HERO SECTION ================= */}
-//         <header className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-background-main">
-            
-//             {/* --- NEW BACKGROUND START --- */}
-//             <div className="absolute inset-0 z-0">
-//                 {/* 1. The Interactive Constellation Animation */}
-//                 <div className="absolute inset-0 z-0">
-//                     <InteractiveNodes />
-//                 </div>
-
-//                 {/* 2. Gradient Overlay (Kept for text readability) */}
-//                 <div className="absolute inset-0 bg-gradient-to-b from-background-main/80 via-transparent to-background-main z-10 pointer-events-none"></div>
-                
-//                 {/* 3. Optional: Scanlines for texture (You can remove if you want it super clean) */}
-//                 <div className="absolute inset-0 bg-scanlines bg-[length:100%_4px] opacity-20 z-10 pointer-events-none"></div>
-//             </div>
-//             {/* --- NEW BACKGROUND END --- */}
-
-//             {/* Glowing Blobs (Keep these for color depth) */}
-//             <div className="absolute top-1/4 left-10 w-64 h-64 bg-secondary rounded-full blur-[120px] opacity-20 animate-pulse-slow pointer-events-none"></div>
-//             <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-primary rounded-full blur-[140px] opacity-15 animate-pulse-slow pointer-events-none"></div>
-
-//             <div className="relative z-20 container mx-auto px-6 flex flex-col items-center text-center gap-8 pointer-events-none"> 
-//                 {/* pointer-events-none allows clicks to pass through to canvas, 
-//                     we re-enable it on interactive elements below */}
-                
-//                 <div className="inline-flex items-center gap-3 px-4 py-1 bg-surface-card/80 backdrop-blur-sm border border-highlight/30 transform hover:-translate-y-1 transition-transform mb-4 pixel-corners pointer-events-auto">
-//                     <span className="w-2 h-2 bg-primary animate-pulse shadow-[0_0_8px_#FF6A00]"></span>
-//                     <span className="text-highlight text-lg font-pixel uppercase tracking-widest">Est. 2026 // NIT Warangal</span>
-//                 </div>
-
-//                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-pixel uppercase text-text-main leading-[0.9] tracking-normal max-w-6xl drop-shadow-[0_4px_0_rgba(215,38,255,0.4)] pointer-events-auto">
-//                     "The best way to <br/>
-//                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">predict the future</span> <br/>
-//                     is to <span className="border-b-4 border-primary text-white">invent it</span>."
-//                 </h1>
-
-//                 <p className="max-w-2xl text-text-main/70 text-lg md:text-xl font-display mt-6 bg-background-main/50 backdrop-blur-md p-6 border border-white/10 pixel-corners pointer-events-auto">
-//                     Welcome to the <span className="text-primary font-bold">Innovation Garage</span>. A hands-on community to build, experiment, and explore.
-//                 </p>
-//             </div>
-//         </header>
-
-//         {/* ... The rest of the page (Marquee, About, etc.) remains exactly the same ... */}
-//         {/* ================= MARQUEE STRIP ================= */}
-//         <div className="relative bg-surface-card overflow-hidden py-3 border-y border-primary/50 z-20">
-//             <div className="absolute inset-0 bg-scanlines opacity-50 pointer-events-none"></div>
-//             <div className="flex animate-marquee whitespace-nowrap gap-16 font-pixel text-3xl uppercase tracking-widest items-center text-highlight">
-//                 <span>/// Innovation Garage</span>
-//                 <span className="text-primary">✦ Build The Future</span>
-//                 <span>/// Radical Ideas</span>
-//                 <span className="text-secondary">✦ No Limits</span>
-//                 <span>/// Innovation Garage</span>
-//                 <span className="text-primary">✦ Build The Future</span>
-//                 <span>/// Radical Ideas</span>
-//                 <span className="text-secondary">✦ No Limits</span>
-//                 <span>/// Innovation Garage</span>
-//                 <span className="text-primary">✦ Build The Future</span>
-//             </div>
-//         </div>
-
-//         {/* ================= ABOUT SECTION ================= */}
-//         <section className="relative py-24 px-6 bg-background-main overflow-hidden">
-//             <div className="max-w-[1280px] mx-auto relative z-10">
-//                 <div className="mb-16 flex flex-col md:flex-row justify-between items-end gap-6 border-b border-white/10 pb-8">
-//                     <div>
-//                         <span className="text-primary font-pixel text-xl uppercase tracking-widest mb-2 block">01 // Who Are We</span>
-//                         <h2 className="text-5xl md:text-6xl font-pixel uppercase text-text-main leading-none">
-//                             About The <span className="text-secondary">Garage</span>
-//                         </h2>
-//                     </div>
-//                     <p className="max-w-md text-text-main/60 font-display text-l text-right hidden md:block">
-//                         A collaborative ecosystem where students experiment without fear of failure.
-//                     </p>
-//                 </div>
-
-//                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-//                     {/* Mission Card */}
-//                     <div className="group relative p-8 rounded-none bg-surface-card border border-white/10 hover:border-primary transition-all duration-300 pixel-corners">
-//                         <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-[4rem]"></div>
-//                         <div className="flex items-start justify-between mb-8">
-//                             <div className="size-14 bg-background-main border border-primary text-primary flex items-center justify-center pixel-corners shadow-[4px_4px_0_0_#FF6A00]">
-//                                 <span className="material-symbols-outlined text-3xl">target</span>
-//                             </div>
-//                             <span className="font-pixel text-6xl text-white/5 group-hover:text-primary/10 transition-colors">01</span>
-//                         </div>
-//                         <h3 className="text-3xl font-pixel uppercase text-text-main mb-4 group-hover:text-primary transition-colors">Our Mission</h3>
-//                         <p className="text-text-main/70 text-lg leading-relaxed font-display mb-6">
-//                             To support students in turning ideas into projects and collaborations. 
-// We bring students from diverse backgrounds together to learn and build side by side.
-//                         </p>
-//                     </div>
-
-//                     {/* History Card */}
-//                     <div className="group relative p-8 rounded-none bg-surface-card border border-white/10 hover:border-secondary transition-all duration-300 pixel-corners">
-//                         <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-secondary/10 to-transparent rounded-bl-[4rem]"></div>
-//                         <div className="flex items-start justify-between mb-8">
-//                             <div className="size-14 bg-background-main border border-secondary text-secondary flex items-center justify-center pixel-corners shadow-[4px_4px_0_0_#D726FF]">
-//                                 <span className="material-symbols-outlined text-3xl">history_edu</span>
-//                             </div>
-//                             <span className="font-pixel text-6xl text-white/5 group-hover:text-secondary/10 transition-colors">02</span>
-//                         </div>
-//                         <h3 className="text-3xl font-pixel uppercase text-text-main mb-4 group-hover:text-secondary transition-colors">Our History</h3>
-//                         <p className="text-text-main/70 text-lg leading-relaxed font-display mb-6">
-//                             What began as a small student meetup has grown into a campus makerspace for creation and skill development. Founded in 2013, Innovation Garage has supported 50+ startups and serves as a startup incubator at NITW.
-//                         </p>
-//                     </div>
-//                 </div>
-//             </div>
-//         </section>
-
-//         {/* ================= NEW IG_TANK PROMO SECTION ================= */}
-//         <IdeasPromo /> 
-//         {/* ============================================================= */}
-
-//         {/* ================= PAST EVENTS SLIDER ================= */}
-//         <section className="py-20 px-6 bg-surface-card border-t border-white/10 relative overflow-hidden">
-//             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 mix-blend-overlay"></div>
-//             <div className="max-w-[1400px] mx-auto relative z-10">
-//                 <div className="flex flex-wrap justify-between items-end mb-12 gap-4">
-//                     <div>
-//                         <span className="text-highlight font-pixel text-xl uppercase tracking-widest mb-2 block">03 // Rewind</span>
-//                         <h2 className="text-5xl md:text-6xl text-text-main font-pixel uppercase">Past <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Events</span></h2>
-//                     </div>
-//                 </div>
-
-//                 {/* Horizontal Scroll Container */}
-//                 <div className="flex overflow-x-auto gap-6 pb-8 snap-x scrollbar-thin scrollbar-thumb-primary scrollbar-track-background-main">
-                    
-//                     {pastEvents.map((event) => {
-//                         // Strict mapping to keep your exact design colors
-//                         const colors = {
-//                             primary: {
-//                                 hover: "hover:border-primary",
-//                                 overlay: "bg-primary/20",
-//                                 text: "text-primary",
-//                                 border: "border-primary"
-//                             },
-//                             secondary: {
-//                                 hover: "hover:border-secondary",
-//                                 overlay: "bg-secondary/20",
-//                                 text: "text-secondary",
-//                                 border: "border-secondary"
-//                             },
-//                             highlight: {
-//                                 hover: "hover:border-highlight",
-//                                 overlay: "bg-highlight/20",
-//                                 text: "text-highlight",
-//                                 border: "border-highlight"
-//                             }
-//                         }[event.theme as 'primary' | 'secondary' | 'highlight'];
-
-//                         return (
-//                             <a key={event.id} className={`min-w-[300px] md:min-w-[380px] snap-center group relative block bg-background-main border border-white/10 ${colors.hover} transition-all duration-300 pixel-corners`} href={event.link}>
-//                                 <div className="h-56 w-full overflow-hidden relative border-b border-white/10">
-//                                     <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" style={{backgroundImage: `url('${event.image}')`, opacity: 0.8}}></div>
-//                                     <div className={`absolute inset-0 ${colors.overlay} opacity-0 group-hover:opacity-100 transition-opacity`}></div>
-//                                     <span className={`absolute top-4 right-4 bg-black/80 ${colors.text} border ${colors.border} px-2 py-1 font-pixel text-lg uppercase tracking-wider`}>{event.tag}</span>
-//                                 </div>
-//                                 <div className="p-6">
-//                                     <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">{event.title}</h3>
-//                                     <p className="text-text-main/60 font-display text-sm mb-4">{event.description}</p>
-//                                     <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
-//                                         <span className="text-s font-pixel uppercase text-white/50">{event.date}</span>
-//                                         <span className={`${colors.text} font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform`}>Details {">"}</span>
-//                                     </div>
-//                                 </div>
-//                             </a>
-//                         );
-//                     })}
-
-//                 </div>
-//             </div>
-//         </section>
-
-//       </main>
-//       <Footer />
-//     </>
-//   );
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 "use client"
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import InteractiveNodes from "@/components/InteractiveNodes"; 
+import InteractiveNodes from "@/components/InteractiveNodes"; // <--- Updated Import
 import IdeasPromo from "@/components/IdeasPromo";
-import ProblemVault from "@/components/ProblemVault";
-import LiveComms from "@/components/LiveComms";
-import { useState, useEffect } from "react"; // Added for Countdown
-import HoloTicketModal from "@/components/HoloTicketModal";
-import Link from "next/link";
 
-// ==========================================
-// 1. VELOCITY LIVE DATA (Timeline)
-// ==========================================
-const SCHEDULE = [
-  { id: 1, time: "04:00 PM", label: "CHECK-IN", status: "completed" },
-  { id: 2, time: "07:00 PM", label: "OREINTATION", status: "completed" }, 
-  { id: 5, time: "07:30 PM", label: "ROUND 1", status: "completed" },
-  { id: 4, time: "08:10 PM", label: "DINNER", status: "completed" },
-  { id: 7, time: "07:30 PM", label: "ROUND 2", status: "active" },// <--- CURRENT
-  { id: 3, time: "12:00 AM", label: "CP1", status: "upcoming" },
-  //{ id: 5, time: "08:00 PM", label: "MENTOR ROUND 1", status: "upcoming" },
-  //{ id: 6, time: "DAY 02", label: "-----", status: "upcoming" },
-];
-
-// Past Events Data (Kept Unchanged)
+// Past Events Data
 const pastEvents = [
   {
     id: 1,
@@ -1133,7 +743,7 @@ const pastEvents = [
     tag: "SHOWCASE",
     image: "/events/startupsimulation.png",
     link: "/events",
-    theme: "primary"
+    theme: "primary" // Options: primary, secondary, highlight
   },
   {
     id: 2,
@@ -1168,163 +778,73 @@ const pastEvents = [
 ];
 
 export default function Home() {
-  // --- COUNTDOWN LOGIC ---
-  const [timeLeft, setTimeLeft] = useState("");
-    const [showIDModal, setShowIDModal] = useState(false);
-  useEffect(() => {
-    const targetDate = new Date("2026-01-25T00:10:00");
-    const interval = setInterval(() => {
-      const now = new Date();
-      const diff = targetDate.getTime() - now.getTime();
-
-      if (diff <= 0) setTimeLeft("00:00:00");
-      else {
-        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const s = Math.floor((diff % (1000 * 60)) / 1000);
-        setTimeLeft(`${h.toString().padStart(2, "0")}:${m.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`);
-      }
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <>
       <Navbar />
-      <LiveComms />
-      <HoloTicketModal isOpen={showIDModal} onClose={() => setShowIDModal(false)} />
       <main className="bg-background-main text-text-main font-display overflow-x-hidden selection:bg-primary selection:text-background-main">
         
-        {/* ================= HERO SECTION (VELOCITY TAKEOVER) ================= */}
-        <header className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-background-main border-b-4 border-primary">
+        {/* ================= HERO SECTION ================= */}
+        <header className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-background-main">
             
-            {/* --- BACKGROUND (Kept your Nodes) --- */}
+            {/* --- NEW BACKGROUND START --- */}
             <div className="absolute inset-0 z-0">
+                {/* 1. The Interactive Constellation Animation */}
                 <div className="absolute inset-0 z-0">
                     <InteractiveNodes />
                 </div>
+
+                {/* 2. Gradient Overlay (Kept for text readability) */}
                 <div className="absolute inset-0 bg-gradient-to-b from-background-main/80 via-transparent to-background-main z-10 pointer-events-none"></div>
+                
+                {/* 3. Optional: Scanlines for texture (You can remove if you want it super clean) */}
                 <div className="absolute inset-0 bg-scanlines bg-[length:100%_4px] opacity-20 z-10 pointer-events-none"></div>
             </div>
+            {/* --- NEW BACKGROUND END --- */}
 
-            {/* Glowing Blobs */}
+            {/* Glowing Blobs (Keep these for color depth) */}
             <div className="absolute top-1/4 left-10 w-64 h-64 bg-secondary rounded-full blur-[120px] opacity-20 animate-pulse-slow pointer-events-none"></div>
             <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-primary rounded-full blur-[140px] opacity-15 animate-pulse-slow pointer-events-none"></div>
 
-            {/* --- HERO CONTENT (UPDATED FOR VELOCITY) --- */}
             <div className="relative z-20 container mx-auto px-6 flex flex-col items-center text-center gap-8 pointer-events-none"> 
+                {/* pointer-events-none allows clicks to pass through to canvas, 
+                    we re-enable it on interactive elements below */}
                 
-                {/* Status Badge */}
-                <div className="inline-flex items-center gap-3 px-6 py-2 bg-red-900/40 border-2 border-red-500 shadow-[0_0_30px_rgba(255,0,0,0.4)] backdrop-blur-md animate-pulse pointer-events-auto transform hover:scale-105 transition-transform">
-                    <span className="w-3 h-3 bg-red-500 rounded-full animate-ping"></span>
-                    <span className="text-red-500 font-bold font-pixel tracking-widest text-lg">REGISTRATIONS // FULL</span>
+                <div className="inline-flex items-center gap-3 px-4 py-1 bg-surface-card/80 backdrop-blur-sm border border-highlight/30 transform hover:-translate-y-1 transition-transform mb-4 pixel-corners pointer-events-auto">
+                    <span className="w-2 h-2 bg-primary animate-pulse shadow-[0_0_8px_#FF6A00]"></span>
+                    <span className="text-highlight text-lg font-pixel uppercase tracking-widest">Est. 2026 // NIT Warangal</span>
                 </div>
 
-                {/* Main Title */}
-                <h1 className="text-6xl md:text-9xl font-pixel uppercase text-white leading-[0.85] tracking-tighter drop-shadow-[0_0_25px_rgba(255,255,255,0.3)] pointer-events-auto">
-                    VELOCITY
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-pixel uppercase text-text-main leading-[0.9] tracking-normal max-w-6xl drop-shadow-[0_4px_0_rgba(215,38,255,0.4)] pointer-events-auto">
+                    "The best way to <br/>
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">predict the future</span> <br/>
+                    is to <span className="border-b-4 border-primary text-white">invent it</span>."
                 </h1>
-                
-                <p className="text-primary text-2xl md:text-3xl tracking-[0.3em] font-mono mt-[-10px] pointer-events-auto bg-black/40 px-4">
-                    EXECUTION IN PROGESS
+
+                <p className="max-w-2xl text-text-main/70 text-lg md:text-xl font-display mt-6 bg-background-main/50 backdrop-blur-md p-6 border border-white/10 pixel-corners pointer-events-auto">
+                    Welcome to the <span className="text-primary font-bold">Innovation Garage</span>. A hands-on community to build, experiment, and explore.
                 </p>
-                {/* 🔴 NEW BUTTON: GENERATE ID
-                <button 
-                    onClick={() => setShowIDModal(true)}
-                    className="pointer-events-auto mt-4 px-8 py-3 bg-white text-black font-pixel font-bold text-lg uppercase tracking-widest hover:bg-primary hover:text-white transition-all shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:shadow-[0_0_30px_#FF6A00] transform hover:-translate-y-1"
-                >
-                    <span className="flex items-center gap-2">
-                        <span className="material-symbols-outlined">badge</span>
-                        GENERATE OPERATIVE ID
-                    </span>
-                </button> */}
-                {/* Countdown Box */}
-                <div className="mt-8 p-6 md:p-8 border-x-4 border-secondary bg-black/60 backdrop-blur-md pointer-events-auto pixel-corners">
-                    <p className="text-gray-200 text-s md:text-5xl tracking-[0.2em] mb-2 text-center font-pixel">CHECKPOINT 1</p>
-                    <div className="text-5xl md:text-8xl font-mono text-white tracking-widest tabular-nums drop-shadow-md">
-                        {timeLeft || "SYNCING..."}
-                    </div>
-                </div>
             </div>
         </header>
 
-
-        {/* ================= NEW: LIVE STATUS TICKER ================= */}
-        <div className="relative bg-secondary overflow-hidden py-3 border-y border-white z-20">
+        {/* ... The rest of the page (Marquee, About, etc.) remains exactly the same ... */}
+        {/* ================= MARQUEE STRIP ================= */}
+        <div className="relative bg-surface-card overflow-hidden py-3 border-y border-primary/50 z-20">
             <div className="absolute inset-0 bg-scanlines opacity-50 pointer-events-none"></div>
-            <div className="flex animate-marquee whitespace-nowrap gap-16 font-pixel text-xl uppercase tracking-widest items-center text-black font-bold">
-                <span>/// SYSTEM STATUS: OPTIMAL</span>
-                <span>/// OC: 20+</span>
-                <span>/// PRIZE POOL: ₹20,000+</span>
-                <span>/// JUDGES: CONNECTED</span>
-                <span>/// FOOD: SCHEDULED</span>
-                <span>/// SYSTEM STATUS: OPTIMAL</span>
-                <span>/// OC: 20+</span>
-                <span>/// PRIZE POOL: ₹20,000+</span>
-                <span>/// JUDGES: CONNECTED</span>
+            <div className="flex animate-marquee whitespace-nowrap gap-16 font-pixel text-3xl uppercase tracking-widest items-center text-highlight">
+                <span>/// Innovation Garage</span>
+                <span className="text-primary">✦ Build The Future</span>
+                <span>/// Radical Ideas</span>
+                <span className="text-secondary">✦ No Limits</span>
+                <span>/// Innovation Garage</span>
+                <span className="text-primary">✦ Build The Future</span>
+                <span>/// Radical Ideas</span>
+                <span className="text-secondary">✦ No Limits</span>
+                <span>/// Innovation Garage</span>
+                <span className="text-primary">✦ Build The Future</span>
             </div>
         </div>
 
-
-        {/* ================= NEW: LIVE TIMELINE (PHASE RUNNER) ================= */}
-        <section className="relative py-24 px-6 bg-background-main border-b border-white/10">
-            <div className="max-w-[1280px] mx-auto">
-                <div className="flex items-center gap-4 mb-16">
-                    <span className="material-symbols-outlined text-4xl text-primary">timeline</span>
-                    <h2 className="text-3xl md:text-5xl font-pixel text-white tracking-tight uppercase">
-                        Live <span className="text-primary">Timeline</span>
-                    </h2>
-                </div>
-
-                {/* Timeline Visual */}
-                <div className="relative">
-                    {/* Connecting Line */}
-                    <div className="absolute left-[29px] top-0 bottom-0 w-1 bg-white/10 md:left-0 md:right-0 md:top-[29px] md:h-1 md:w-full"></div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-6 gap-10 relative">
-                        {SCHEDULE.map((phase) => (
-                            <div key={phase.id} className="relative flex md:flex-col items-center md:items-start gap-6 md:gap-4 group">
-                                
-                                {/* Node */}
-                                <div className={`
-                                    relative z-10 w-16 h-16 flex items-center justify-center border-4 rounded-full bg-background-main transition-all duration-300 pixel-corners
-                                    ${phase.status === 'active' 
-                                        ? 'border-primary shadow-[0_0_30px_#FF6A00] scale-110' 
-                                        : phase.status === 'completed' 
-                                            ? 'border-white/30 bg-white/5' 
-                                            : 'border-white/10'
-                                    }
-                                `}>
-                                    {phase.status === 'active' && (
-                                        <span className="absolute inset-0 bg-primary rounded-full animate-ping opacity-20"></span>
-                                    )}
-                                    <span className={`material-symbols-outlined text-2xl ${phase.status === 'active' ? 'text-primary' : 'text-white/30'}`}>
-                                        {phase.status === 'completed' ? 'check' : 'terminal'}
-                                    </span>
-                                </div>
-
-                                {/* Text Info */}
-                                <div className="flex flex-col md:items-center md:text-center">
-                                    <span className={`text-xl font-bold font-mono ${phase.status === 'active' ? 'text-white' : 'text-white/50'}`}>
-                                        {phase.time}
-                                    </span>
-                                    <span className={`text-lg font-pixel uppercase tracking-wide mt-1 ${phase.status === 'active' ? 'text-primary' : 'text-white/40'}`}>
-                                        {phase.label}
-                                    </span>
-                                    {phase.status === 'active' && (
-                                        <span className="w-fit mx-auto text-[10px] bg-primary text-black px-2 py-0.5 font-bold mt-2 animate-pulse rounded-sm">
-                                            LIVE NOW
-                                        </span>
-                                    )}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </section>
-        {/* <ProblemVault /> */}
-        {/* ================= ABOUT SECTION (UNCHANGED) ================= */}
+        {/* ================= ABOUT SECTION ================= */}
         <section className="relative py-24 px-6 bg-background-main overflow-hidden">
             <div className="max-w-[1280px] mx-auto relative z-10">
                 <div className="mb-16 flex flex-col md:flex-row justify-between items-end gap-6 border-b border-white/10 pb-8">
@@ -1374,10 +894,11 @@ We bring students from diverse backgrounds together to learn and build side by s
             </div>
         </section>
 
-        {/* ================= IG_TANK PROMO (UNCHANGED) ================= */}
+        {/* ================= NEW IG_TANK PROMO SECTION ================= */}
         <IdeasPromo /> 
-        
-        {/* ================= PAST EVENTS (UNCHANGED) ================= */}
+        {/* ============================================================= */}
+
+        {/* ================= PAST EVENTS SLIDER ================= */}
         <section className="py-20 px-6 bg-surface-card border-t border-white/10 relative overflow-hidden">
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 mix-blend-overlay"></div>
             <div className="max-w-[1400px] mx-auto relative z-10">
@@ -1442,3 +963,484 @@ We bring students from diverse backgrounds together to learn and build side by s
     </>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// "use client"
+// import Navbar from "@/components/Navbar";
+// import Footer from "@/components/Footer";
+// import InteractiveNodes from "@/components/InteractiveNodes"; 
+// import IdeasPromo from "@/components/IdeasPromo";
+// import ProblemVault from "@/components/ProblemVault";
+// import LiveComms from "@/components/LiveComms";
+// import { useState, useEffect } from "react"; // Added for Countdown
+// import HoloTicketModal from "@/components/HoloTicketModal";
+// import Link from "next/link";
+
+// // ==========================================
+// // 1. VELOCITY LIVE DATA (Timeline)
+// // ==========================================
+// const SCHEDULE = [
+//   { id: 1, time: "04:00 PM", label: "CHECK-IN", status: "completed" },
+//   { id: 2, time: "07:00 PM", label: "OREINTATION", status: "completed" }, 
+//   { id: 5, time: "07:30 PM", label: "ROUND 1", status: "completed" },
+//   { id: 4, time: "08:10 PM", label: "DINNER", status: "completed" },
+//   { id: 7, time: "07:30 PM", label: "ROUND 2", status: "completed" },// <--- CURRENT
+//   { id: 3, time: "12:00 AM", label: "CP1", status: "completed" },
+//   { id: 9, time: "12:00 AM", label: "ROUND 3", status: "active" },
+//   { id: 8, time: "12:00 PM", label: "CP2", status: "upcoming" },
+//   //{ id: 5, time: "08:00 PM", label: "MENTOR ROUND 1", status: "upcoming" },
+//   //{ id: 6, time: "DAY 02", label: "-----", status: "upcoming" },
+// ];
+
+// // Past Events Data (Kept Unchanged)
+// const pastEvents = [
+//   {
+//     id: 1,
+//     title: "Startup Simulation",
+//     description: "A hands-on startup game where teams made real-time decisions across tech, finance, and marketing.",
+//     date: "Oct 24, 2025",
+//     tag: "SHOWCASE",
+//     image: "/events/startupsimulation.png",
+//     link: "/events",
+//     theme: "primary"
+//   },
+//   {
+//     id: 2,
+//     title: "Ignite 36",
+//     description: "A 36-hour hackathon where teams built and pitched solutions to problem statements. Ideas went from concept to demo fast.",
+//     date: "Sept 27-28, 2025",
+//     tag: "Hackathon",
+//     image: "/events/ignite36.jpeg",
+//     link: "/events",
+//     theme: "secondary"
+//   },
+//   {
+//     id: 3,
+//     title: "E-Summit",
+//     description: "Focused on inspiring stories, challenges, and opportunities and was highly beneficial for aspiring entrepreneurs.",
+//     date: "March, 2024",
+//     tag: "Flagship",
+//     image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2070&auto=format&fit=crop",
+//     link: "/events",
+//     theme: "highlight"
+//   },
+//   {
+//     id: 4,
+//     title: "Agentic AI workshop",
+//     description: "The workshop aimed to provide hands-on experience in building autonomous AI agents using n8n",
+//     date: "Oct 8, 2024",
+//     tag: "Workshop",
+//     image: "/events/agenticai.png",
+//     link: "/events",
+//     theme: "primary"
+//   }
+// ];
+
+// export default function Home() {
+//   // --- COUNTDOWN LOGIC ---
+//   const [timeLeft, setTimeLeft] = useState("");
+//     const [showIDModal, setShowIDModal] = useState(false);
+//   useEffect(() => {
+//     const targetDate = new Date("2026-01-25T12:10:00");
+//     const interval = setInterval(() => {
+//       const now = new Date();
+//       const diff = targetDate.getTime() - now.getTime();
+
+//       if (diff <= 0) setTimeLeft("00:00:00");
+//       else {
+//         const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+//         const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+//         const s = Math.floor((diff % (1000 * 60)) / 1000);
+//         setTimeLeft(`${h.toString().padStart(2, "0")}:${m.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`);
+//       }
+//     }, 1000);
+//     return () => clearInterval(interval);
+//   }, []);
+
+//   return (
+//     <>
+//       <Navbar />
+//       <LiveComms />
+//       <HoloTicketModal isOpen={showIDModal} onClose={() => setShowIDModal(false)} />
+//       <main className="bg-background-main text-text-main font-display overflow-x-hidden selection:bg-primary selection:text-background-main">
+        
+//         {/* ================= HERO SECTION (VELOCITY TAKEOVER) ================= */}
+//         <header className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-background-main border-b-4 border-primary">
+            
+//             {/* --- BACKGROUND (Kept your Nodes) --- */}
+//             <div className="absolute inset-0 z-0">
+//                 <div className="absolute inset-0 z-0">
+//                     <InteractiveNodes />
+//                 </div>
+//                 <div className="absolute inset-0 bg-gradient-to-b from-background-main/80 via-transparent to-background-main z-10 pointer-events-none"></div>
+//                 <div className="absolute inset-0 bg-scanlines bg-[length:100%_4px] opacity-20 z-10 pointer-events-none"></div>
+//             </div>
+
+//             {/* Glowing Blobs */}
+//             <div className="absolute top-1/4 left-10 w-64 h-64 bg-secondary rounded-full blur-[120px] opacity-20 animate-pulse-slow pointer-events-none"></div>
+//             <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-primary rounded-full blur-[140px] opacity-15 animate-pulse-slow pointer-events-none"></div>
+
+//             {/* --- HERO CONTENT (UPDATED FOR VELOCITY) --- */}
+//             <div className="relative z-20 container mx-auto px-6 flex flex-col items-center text-center gap-8 pointer-events-none"> 
+                
+//                 {/* Status Badge */}
+//                 <div className="inline-flex items-center gap-3 px-6 py-2 bg-red-900/40 border-2 border-red-500 shadow-[0_0_30px_rgba(255,0,0,0.4)] backdrop-blur-md animate-pulse pointer-events-auto transform hover:scale-105 transition-transform">
+//                     <span className="w-3 h-3 bg-red-500 rounded-full animate-ping"></span>
+//                     <span className="text-red-500 font-bold font-pixel tracking-widest text-lg">REGISTRATIONS // FULL</span>
+//                 </div>
+
+//                 {/* Main Title */}
+//                 <h1 className="text-6xl md:text-9xl font-pixel uppercase text-white leading-[0.85] tracking-tighter drop-shadow-[0_0_25px_rgba(255,255,255,0.3)] pointer-events-auto">
+//                     VELOCITY
+//                 </h1>
+                
+//                 <p className="text-primary text-2xl md:text-3xl tracking-[0.3em] font-mono mt-[-10px] pointer-events-auto bg-black/40 px-4">
+//                     EXECUTION IN PROGESS
+//                 </p>
+//                 {/* 🔴 NEW BUTTON: GENERATE ID
+//                 <button 
+//                     onClick={() => setShowIDModal(true)}
+//                     className="pointer-events-auto mt-4 px-8 py-3 bg-white text-black font-pixel font-bold text-lg uppercase tracking-widest hover:bg-primary hover:text-white transition-all shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:shadow-[0_0_30px_#FF6A00] transform hover:-translate-y-1"
+//                 >
+//                     <span className="flex items-center gap-2">
+//                         <span className="material-symbols-outlined">badge</span>
+//                         GENERATE OPERATIVE ID
+//                     </span>
+//                 </button> */}
+//                 {/* Countdown Box */}
+//                 <div className="mt-8 p-6 md:p-8 border-x-4 border-secondary bg-black/60 backdrop-blur-md pointer-events-auto pixel-corners">
+//                     <p className="text-gray-200 text-s md:text-5xl tracking-[0.2em] mb-2 text-center font-pixel">CHECKPOINT 2</p>
+//                     <div className="text-5xl md:text-8xl font-mono text-white tracking-widest tabular-nums drop-shadow-md">
+//                         {timeLeft || "SYNCING..."}
+//                     </div>
+//                 </div>
+//             </div>
+//         </header>
+
+
+//         {/* ================= NEW: LIVE STATUS TICKER ================= */}
+//         <div className="relative bg-secondary overflow-hidden py-3 border-y border-white z-20">
+//             <div className="absolute inset-0 bg-scanlines opacity-50 pointer-events-none"></div>
+//             <div className="flex animate-marquee whitespace-nowrap gap-16 font-pixel text-xl uppercase tracking-widest items-center text-black font-bold">
+//                 <span>/// SYSTEM STATUS: OPTIMAL</span>
+//                 <span>/// OC: 20+</span>
+//                 <span>/// PRIZE POOL: ₹20,000+</span>
+//                 <span>/// JUDGES: CONNECTED</span>
+//                 <span>/// FOOD: SCHEDULED</span>
+//                 <span>/// SYSTEM STATUS: OPTIMAL</span>
+//                 <span>/// OC: 20+</span>
+//                 <span>/// PRIZE POOL: ₹20,000+</span>
+//                 <span>/// JUDGES: CONNECTED</span>
+//             </div>
+//         </div>
+
+
+//         {/* ================= NEW: LIVE TIMELINE (PHASE RUNNER) ================= */}
+//         <section className="relative py-24 px-6 bg-background-main border-b border-white/10">
+//             <div className="max-w-[1280px] mx-auto">
+//                 <div className="flex items-center gap-4 mb-16">
+//                     <span className="material-symbols-outlined text-4xl text-primary">timeline</span>
+//                     <h2 className="text-3xl md:text-5xl font-pixel text-white tracking-tight uppercase">
+//                         Live <span className="text-primary">Timeline</span>
+//                     </h2>
+//                 </div>
+
+//                 {/* Timeline Visual */}
+//                 <div className="relative">
+//                     {/* Connecting Line */}
+//                     <div className="absolute left-[29px] top-0 bottom-0 w-1 bg-white/10 md:left-0 md:right-0 md:top-[29px] md:h-1 md:w-full"></div>
+
+//                     <div className="grid grid-cols-1 md:grid-cols-6 gap-10 relative">
+//                         {SCHEDULE.map((phase) => (
+//                             <div key={phase.id} className="relative flex md:flex-col items-center md:items-start gap-6 md:gap-4 group">
+                                
+//                                 {/* Node */}
+//                                 <div className={`
+//                                     relative z-10 w-16 h-16 flex items-center justify-center border-4 rounded-full bg-background-main transition-all duration-300 pixel-corners
+//                                     ${phase.status === 'active' 
+//                                         ? 'border-primary shadow-[0_0_30px_#FF6A00] scale-110' 
+//                                         : phase.status === 'completed' 
+//                                             ? 'border-white/30 bg-white/5' 
+//                                             : 'border-white/10'
+//                                     }
+//                                 `}>
+//                                     {phase.status === 'active' && (
+//                                         <span className="absolute inset-0 bg-primary rounded-full animate-ping opacity-20"></span>
+//                                     )}
+//                                     <span className={`material-symbols-outlined text-2xl ${phase.status === 'active' ? 'text-primary' : 'text-white/30'}`}>
+//                                         {phase.status === 'completed' ? 'check' : 'terminal'}
+//                                     </span>
+//                                 </div>
+
+//                                 {/* Text Info */}
+//                                 <div className="flex flex-col md:items-center md:text-center">
+//                                     <span className={`text-xl font-bold font-mono ${phase.status === 'active' ? 'text-white' : 'text-white/50'}`}>
+//                                         {phase.time}
+//                                     </span>
+//                                     <span className={`text-lg font-pixel uppercase tracking-wide mt-1 ${phase.status === 'active' ? 'text-primary' : 'text-white/40'}`}>
+//                                         {phase.label}
+//                                     </span>
+//                                     {phase.status === 'active' && (
+//                                         <span className="w-fit mx-auto text-[10px] bg-primary text-black px-2 py-0.5 font-bold mt-2 animate-pulse rounded-sm">
+//                                             LIVE NOW
+//                                         </span>
+//                                     )}
+//                                 </div>
+//                             </div>
+//                         ))}
+//                     </div>
+//                 </div>
+//             </div>
+//         </section>
+//         {/* <ProblemVault /> */}
+//         {/* ================= ABOUT SECTION (UNCHANGED) ================= */}
+//         <section className="relative py-24 px-6 bg-background-main overflow-hidden">
+//             <div className="max-w-[1280px] mx-auto relative z-10">
+//                 <div className="mb-16 flex flex-col md:flex-row justify-between items-end gap-6 border-b border-white/10 pb-8">
+//                     <div>
+//                         <span className="text-primary font-pixel text-xl uppercase tracking-widest mb-2 block">01 // Who Are We</span>
+//                         <h2 className="text-5xl md:text-6xl font-pixel uppercase text-text-main leading-none">
+//                             About The <span className="text-secondary">Garage</span>
+//                         </h2>
+//                     </div>
+//                     <p className="max-w-md text-text-main/60 font-display text-l text-right hidden md:block">
+//                         A collaborative ecosystem where students experiment without fear of failure.
+//                     </p>
+//                 </div>
+
+//                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+//                     {/* Mission Card */}
+//                     <div className="group relative p-8 rounded-none bg-surface-card border border-white/10 hover:border-primary transition-all duration-300 pixel-corners">
+//                         <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-[4rem]"></div>
+//                         <div className="flex items-start justify-between mb-8">
+//                             <div className="size-14 bg-background-main border border-primary text-primary flex items-center justify-center pixel-corners shadow-[4px_4px_0_0_#FF6A00]">
+//                                 <span className="material-symbols-outlined text-3xl">target</span>
+//                             </div>
+//                             <span className="font-pixel text-6xl text-white/5 group-hover:text-primary/10 transition-colors">01</span>
+//                         </div>
+//                         <h3 className="text-3xl font-pixel uppercase text-text-main mb-4 group-hover:text-primary transition-colors">Our Mission</h3>
+//                         <p className="text-text-main/70 text-lg leading-relaxed font-display mb-6">
+//                             To support students in turning ideas into projects and collaborations. 
+// We bring students from diverse backgrounds together to learn and build side by side.
+//                         </p>
+//                     </div>
+
+//                     {/* History Card */}
+//                     <div className="group relative p-8 rounded-none bg-surface-card border border-white/10 hover:border-secondary transition-all duration-300 pixel-corners">
+//                         <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-secondary/10 to-transparent rounded-bl-[4rem]"></div>
+//                         <div className="flex items-start justify-between mb-8">
+//                             <div className="size-14 bg-background-main border border-secondary text-secondary flex items-center justify-center pixel-corners shadow-[4px_4px_0_0_#D726FF]">
+//                                 <span className="material-symbols-outlined text-3xl">history_edu</span>
+//                             </div>
+//                             <span className="font-pixel text-6xl text-white/5 group-hover:text-secondary/10 transition-colors">02</span>
+//                         </div>
+//                         <h3 className="text-3xl font-pixel uppercase text-text-main mb-4 group-hover:text-secondary transition-colors">Our History</h3>
+//                         <p className="text-text-main/70 text-lg leading-relaxed font-display mb-6">
+//                             What began as a small student meetup has grown into a campus makerspace for creation and skill development. Founded in 2013, Innovation Garage has supported 50+ startups and serves as a startup incubator at NITW.
+//                         </p>
+//                     </div>
+//                 </div>
+//             </div>
+//         </section>
+
+//         {/* ================= IG_TANK PROMO (UNCHANGED) ================= */}
+//         <IdeasPromo /> 
+        
+//         {/* ================= PAST EVENTS (UNCHANGED) ================= */}
+//         <section className="py-20 px-6 bg-surface-card border-t border-white/10 relative overflow-hidden">
+//             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 mix-blend-overlay"></div>
+//             <div className="max-w-[1400px] mx-auto relative z-10">
+//                 <div className="flex flex-wrap justify-between items-end mb-12 gap-4">
+//                     <div>
+//                         <span className="text-highlight font-pixel text-xl uppercase tracking-widest mb-2 block">03 // Rewind</span>
+//                         <h2 className="text-5xl md:text-6xl text-text-main font-pixel uppercase">Past <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Events</span></h2>
+//                     </div>
+//                 </div>
+
+//                 {/* Horizontal Scroll Container */}
+//                 <div className="flex overflow-x-auto gap-6 pb-8 snap-x scrollbar-thin scrollbar-thumb-primary scrollbar-track-background-main">
+                    
+//                     {pastEvents.map((event) => {
+//                         // Strict mapping to keep your exact design colors
+//                         const colors = {
+//                             primary: {
+//                                 hover: "hover:border-primary",
+//                                 overlay: "bg-primary/20",
+//                                 text: "text-primary",
+//                                 border: "border-primary"
+//                             },
+//                             secondary: {
+//                                 hover: "hover:border-secondary",
+//                                 overlay: "bg-secondary/20",
+//                                 text: "text-secondary",
+//                                 border: "border-secondary"
+//                             },
+//                             highlight: {
+//                                 hover: "hover:border-highlight",
+//                                 overlay: "bg-highlight/20",
+//                                 text: "text-highlight",
+//                                 border: "border-highlight"
+//                             }
+//                         }[event.theme as 'primary' | 'secondary' | 'highlight'];
+
+//                         return (
+//                             <a key={event.id} className={`min-w-[300px] md:min-w-[380px] snap-center group relative block bg-background-main border border-white/10 ${colors.hover} transition-all duration-300 pixel-corners`} href={event.link}>
+//                                 <div className="h-56 w-full overflow-hidden relative border-b border-white/10">
+//                                     <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" style={{backgroundImage: `url('${event.image}')`, opacity: 0.8}}></div>
+//                                     <div className={`absolute inset-0 ${colors.overlay} opacity-0 group-hover:opacity-100 transition-opacity`}></div>
+//                                     <span className={`absolute top-4 right-4 bg-black/80 ${colors.text} border ${colors.border} px-2 py-1 font-pixel text-lg uppercase tracking-wider`}>{event.tag}</span>
+//                                 </div>
+//                                 <div className="p-6">
+//                                     <h3 className="text-3xl font-pixel uppercase text-text-main mb-2 truncate">{event.title}</h3>
+//                                     <p className="text-text-main/60 font-display text-sm mb-4">{event.description}</p>
+//                                     <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
+//                                         <span className="text-s font-pixel uppercase text-white/50">{event.date}</span>
+//                                         <span className={`${colors.text} font-pixel uppercase text-sm group-hover:translate-x-1 transition-transform`}>Details {">"}</span>
+//                                     </div>
+//                                 </div>
+//                             </a>
+//                         );
+//                     })}
+
+//                 </div>
+//             </div>
+//         </section>
+
+//       </main>
+//       <Footer />
+//     </>
+//   );
+// }
