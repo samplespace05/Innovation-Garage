@@ -732,7 +732,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import InteractiveNodes from "@/components/InteractiveNodes"; // <--- Updated Import
 import IdeasPromo from "@/components/IdeasPromo";
-
+import { Analytics } from "@vercel/analytics/next"
 // Past Events Data
 const pastEvents = [
   {
