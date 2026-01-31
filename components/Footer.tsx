@@ -127,7 +127,7 @@ export default function Footer() {
         {/* THE HIGHLIGHTED CREDITS */}
         <div className="flex flex-col md:flex-row items-center gap-3 md:gap-6 font-pixel uppercase tracking-widest text-sm md:text-base text-center">
             <span className="text-gray-500 text-xs md:text-sm font-mono tracking-normal">
-                Forged in the Garage by
+                Made with ❤️ by
             </span>
             
             <div className="flex items-center gap-6">
