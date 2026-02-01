@@ -85,6 +85,7 @@
 
 import type { Metadata } from "next";
 import { VT323, Space_Grotesk, Syne, Silkscreen } from "next/font/google"; // Import Silkscreen
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const vt323 = VT323({ 
@@ -120,6 +121,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="bg-background-main text-text-main font-pixel overflow-x-hidden selection:bg-secondary selection:text-white">
         {children}
+        <Analytics />
       </body>
     </html>
   );
