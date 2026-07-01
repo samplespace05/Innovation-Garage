@@ -4,11 +4,15 @@ import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 
+type InternalLink = { name: string; path: string; external?: false };
+type ExternalLink = { name: string; href: string; external: true };
+type NavLink = InternalLink | ExternalLink;
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-  const navLinks = [
+  const navLinks: NavLink[] = [
     { name: "Home", path: "/" },
     { name: "Events", path: "/events" },
     { name: "Ideas", path: "/ideas" },
