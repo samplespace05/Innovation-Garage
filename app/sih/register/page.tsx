@@ -1199,9 +1199,8 @@ export default function SIHRegisterPage() {
                         Google Drive Link to BOM PDF<span className="text-primary ml-1">*</span>
                       </label>
                       <p className="font-pixel text-sm text-white/40">
-                        Please add the PDF to Google Drive and ensure anyone with the link is able to view it. If the access is not provided, the registration can be rejected.
-                        <br>
-                        Note: Hardware component costs must be kept under ₹3000; budget optimization directly impacts your technical avaluation score.
+                        Please add the PDF to Google Drive and ensure anyone with the link is able to view it. If the access is not provided, the registration can be rejected.<br/>
+                        <span className="text-red-400 font-bold mt-2 inline-block">Note: Total Bill should be strictly below 3000.</span>
                       </p>
                       <input
                         id="bom-link"
