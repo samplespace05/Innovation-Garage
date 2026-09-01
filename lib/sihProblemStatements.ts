@@ -9,10 +9,12 @@ export type ProblemStatement = {
 };
 
 // Map dynamically from the JSON file to remove hardcoded statements
-export const SIH_PROBLEM_STATEMENTS: ProblemStatement[] = (sihProblemStatementsJson as any[]).map((ps) => ({
-  ps_number: ps.ps_number,
+export const SIH_PROBLEM_STATEMENTS: ProblemStatement[] = (
+  (sihProblemStatementsJson as any).problemStatements ?? []
+).map((ps: any) => ({
+  ps_number: ps.id,
   title: ps.title,
-  org: ps.org || ps.department || "Unknown",
+  org: ps.organization || ps.department || "Unknown",
   category: ps.category === "Hardware" ? "Hardware" : "Software",
   theme: ps.theme || "General",
 }));
