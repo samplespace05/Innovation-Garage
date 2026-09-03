@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 
 export default function IdeasPromo() {
   return (
@@ -18,7 +17,7 @@ export default function IdeasPromo() {
             <div className="flex items-center gap-3">
                 <span className="w-3 h-3 bg-neon-magenta animate-pulse shadow-[0_0_10px_#D726FF]"></span>
                 <span className="font-pixel text-neon-magenta text-xl tracking-widest uppercase">
-                    Status: <span className="text-white">Registration open</span>
+                    Status: <span className="text-white">Registration closed</span>
                 </span>
             </div>
 
@@ -69,19 +68,18 @@ export default function IdeasPromo() {
                 <div className="space-y-2">
                     <h3 className="text-3xl font-pixel text-white uppercase">Ready to Launch?</h3>
                     <p className="font-display text-gray-400">
-                        Registration for SIH is now open. Click below to register your team!
+                        Registration for SIH is now closed. Check the SIH page for updates.
                     </p>
                 </div>
 
-                {/* The Big Button */}
-                <Link href="/sih/register" className="group/btn relative block w-full pointer-events-auto opacity-100">
-                    <div className="absolute inset-0 bg-neon-orange translate-y-0 translate-x-0 group-hover/btn:translate-y-2 group-hover/btn:translate-x-2 transition-transform"></div>
-                    <div className="relative bg-black border-2 border-white p-4 text-center hover:text-white transition-colors">
-                        <span className="font-pixel text-2xl uppercase tracking-widest font-bold flex items-center justify-center gap-3">
-                            Register Now <span className="material-symbols-outlined">arrow_forward</span>
+                {/* Registration Closed */}
+                <div className="relative block w-full">
+                    <div className="relative bg-black border-2 border-white/20 p-4 text-center">
+                        <span className="font-pixel text-2xl uppercase tracking-widest font-bold flex items-center justify-center gap-3 text-white/40">
+                            Registration Closed <span className="material-symbols-outlined">block</span>
                         </span>
                     </div>
-                </Link>
+                </div>
 
             </div>
         </div>

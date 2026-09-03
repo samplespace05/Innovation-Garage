@@ -596,19 +596,36 @@ export default function SIHPage() {
                 </div>
               ) : (
                 <div className="flex flex-col items-center">
-                  <Link
-                    href="/sih/register"
-                    className="group relative inline-flex items-center gap-3 bg-primary text-white font-pixel text-2xl md:text-3xl uppercase tracking-widest px-10 py-5 hover:bg-primary/90 transition-all duration-200 shadow-[6px_6px_0px_0px_rgba(215,38,255,0.6)] hover:shadow-[8px_8px_0px_0px_rgba(215,38,255,0.8)] hover:translate-x-[-2px] hover:translate-y-[-2px] active:shadow-none active:translate-x-0 active:translate-y-0"
-                  >
-                    <span className="material-symbols-outlined text-3xl">how_to_reg</span>
-                    Register Now
-                    <span className="material-symbols-outlined text-2xl group-hover:translate-x-1 transition-transform">
-                      arrow_forward
-                    </span>
-                  </Link>
-                  <p className="text-white/30 font-pixel text-sm mt-3 tracking-wider">
-                    NITW Students Only · Teams of 6 including 1 female.
-                  </p>
+                  {registration.authenticated ? (
+                    <div className="flex flex-col items-center gap-3 border-2 border-red-500/40 bg-red-900/20 p-8 max-w-md w-full">
+                      <span className="material-symbols-outlined text-5xl text-red-400">block</span>
+                      <p className="text-red-400 font-pixel text-2xl md:text-3xl uppercase tracking-widest text-center">
+                        Registration Closed
+                      </p>
+                      <p className="text-white/40 font-pixel text-lg text-center">
+                        New registrations are no longer being accepted.
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="flex flex-col items-center gap-4">
+                      <div className="flex flex-col items-center gap-3 border-2 border-white/10 bg-surface-card p-8 max-w-md w-full">
+                        <span className="material-symbols-outlined text-5xl text-white/30">lock</span>
+                        <p className="text-white/50 font-pixel text-2xl md:text-3xl uppercase tracking-widest text-center">
+                          Registration Closed
+                        </p>
+                        <p className="text-white/30 font-pixel text-lg text-center">
+                          Login to view your registration status.
+                        </p>
+                        <Link
+                          href="/sih/register"
+                          className="mt-2 inline-flex items-center gap-2 bg-primary text-white font-pixel text-lg uppercase tracking-widest px-6 py-3 hover:bg-primary/90 transition-all duration-200 shadow-[4px_4px_0px_0px_rgba(215,38,255,0.6)] hover:translate-x-[-2px] hover:translate-y-[-2px]"
+                        >
+                          <span className="material-symbols-outlined text-xl">login</span>
+                          Login with Google
+                        </Link>
+                      </div>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
@@ -813,15 +830,15 @@ export default function SIHPage() {
                   </p>
                 </div>
               ) : (
-                <Link
-                  href="/sih/register"
-                  className="group inline-flex items-center gap-3 bg-primary text-white font-pixel text-2xl uppercase tracking-widest px-8 py-4 hover:bg-primary/90 transition-all duration-200 shadow-[4px_4px_0px_0px_rgba(215,38,255,0.6)] hover:shadow-[6px_6px_0px_0px_rgba(215,38,255,0.8)] hover:translate-x-[-2px] hover:translate-y-[-2px]"
-                >
-                  Register Your Team
-                  <span className="material-symbols-outlined text-2xl group-hover:translate-x-1 transition-transform">
-                    arrow_forward
-                  </span>
-                </Link>
+                <div className="flex flex-col items-center gap-3">
+                  <span className="material-symbols-outlined text-4xl text-red-400">block</span>
+                  <p className="text-red-400 font-pixel text-xl uppercase tracking-widest">
+                    Registration Closed
+                  </p>
+                  <p className="text-white/30 font-pixel text-base text-center max-w-sm">
+                    New registrations are no longer being accepted. Contact ig@nitw.ac.in for queries.
+                  </p>
+                </div>
               )}
             </div>
           </section>

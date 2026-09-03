@@ -8,6 +8,9 @@ export const runtime = "nodejs";
 // ─────────────────────────────────────────────────────────────────────────────
 // CONFIG
 // ─────────────────────────────────────────────────────────────────────────────
+// Set to true to completely block new registrations at the API level
+const REGISTRATION_CLOSED = true;
+
 const ALLOWED_NITW_DOMAINS = ["nitw.ac.in", "student.nitw.ac.in"];
 // ─────────────────────────────────────────────────────────────────────────────
 // CORS — only allow requests from our own domain
@@ -430,6 +433,14 @@ export async function GET(req: Request) {
 export async function POST(req: Request) {
   const origin = req.headers.get("origin");
   const headers = corsHeaders(origin) ?? {};
+
+  // ── 0. REGISTRATION CLOSED CHECK ───────────────────────────────────────
+  if (REGISTRATION_CLOSED) {
+    return NextResponse.json(
+      { success: false, error: "Registration is closed. No new registrations are being accepted." },
+      { status: 403, headers }
+    );
+  }
 
   // ── 1. CORS CHECK ────────────────────────────────────────────────────────
   if (origin && corsHeaders(origin) === null) {

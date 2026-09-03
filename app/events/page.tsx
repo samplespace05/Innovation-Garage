@@ -1641,7 +1641,7 @@ const upcomingEvents: EventItem[] = [
         date: "SEPT 11 / 48H",
         description: "48 hours to build the impossible. Prizes up to 1.5 lakhs",
         image: "/events/SIH26.png",
-        link: "/sih/register",
+        link: "/sih",
         adminEventId: ""
     }
 ];
@@ -1924,7 +1924,7 @@ export default function Events() {
                                     {isFetching && event.adminEventId 
                                         ? "SYNCING..." 
                                         : event.title === "SIH Ignite" 
-                                            ? "REGISTRATION OPEN" 
+                                            ? "REGISTRATION CLOSED" 
                                             : "REGISTER_>"}
                                 </button>
                             </div>
