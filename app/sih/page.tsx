@@ -292,6 +292,7 @@ export default function SIHPage() {
   const [registration, setRegistration] = useState<{
     authenticated: boolean;
     registered: boolean;
+    currentUserEmail?: string;
     data?: any;
   }>({
     authenticated: false,
@@ -308,6 +309,7 @@ export default function SIHPage() {
             setRegistration({
               authenticated: result.authenticated,
               registered: result.registered,
+              currentUserEmail: result.currentUserEmail,
               data: result.data,
             });
           }
@@ -426,20 +428,36 @@ export default function SIHPage() {
                   <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-secondary" />
 
                   {/* Header */}
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-white/10 pb-8">
-                    <div className="flex items-center gap-4">
-                      <span className="relative flex h-5 w-5">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75" />
-                        <span className="relative inline-flex rounded-full h-5 w-5 bg-green-500" />
-                      </span>
-                      <div>
-                        <h2 className="text-3xl md:text-5xl font-pixel uppercase text-green-400 tracking-wider font-extrabold">
-                          Registration Confirmed
-                        </h2>
-                        <p className="text-sm md:text-lg font-mono text-white/50 uppercase tracking-widest mt-2">
-                          Authenticated as: {registration.data?.["Authenticated Email"]}
-                        </p>
+                  <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 border-b border-white/10 pb-8">
+                    <div className="flex flex-col gap-4">
+                      <div className="flex items-center gap-4">
+                        <span className="relative flex h-5 w-5">
+                          <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${registration.data?.["Selected"] === "FALSE" ? "bg-white/50" : "bg-green-500"}`} />
+                          <span className={`relative inline-flex rounded-full h-5 w-5 ${registration.data?.["Selected"] === "FALSE" ? "bg-white/50" : "bg-green-500"}`} />
+                        </span>
+                        <div>
+                          <h2 className={`text-3xl md:text-5xl font-pixel uppercase tracking-wider font-extrabold ${registration.data?.["Selected"] === "FALSE" ? "text-white/70" : "text-green-400"}`}>
+                            {registration.data?.["Selected"] === "TRUE" ? "Team Selected!" : registration.data?.["Selected"] === "FALSE" ? "Team Not Selected" : "Registration Confirmed"}
+                          </h2>
+                          <p className="text-sm md:text-lg font-mono text-white/50 uppercase tracking-widest mt-2">
+                            Authenticated as: {registration.currentUserEmail || registration.data?.["Authenticated Email"]}
+                          </p>
+                        </div>
                       </div>
+
+                      {registration.data?.["Selected"] === "TRUE" && (
+                        <div className="bg-green-500/10 border border-green-500/30 px-4 py-3 mt-2 flex items-center gap-3 w-fit">
+                          <span className="material-symbols-outlined text-green-400">celebration</span>
+                          <span className="text-green-400 font-pixel text-sm md:text-base">Congratulations! Your team has been shortlisted. Check resources below.</span>
+                        </div>
+                      )}
+
+                      {registration.data?.["Selected"] === "FALSE" && (
+                        <div className="bg-white/5 border border-white/10 px-4 py-3 mt-2 flex items-center gap-3 w-fit">
+                          <span className="material-symbols-outlined text-white/40">info</span>
+                          <span className="text-white/60 font-pixel text-sm md:text-base">Due to high competition, your team was not selected this time. Thank you for participating!</span>
+                        </div>
+                      )}
                     </div>
                     <button
                       onClick={handleLogout}
@@ -583,11 +601,14 @@ export default function SIHPage() {
                         Join WhatsApp Group
                       </a>
 
-                      {/* Handbook Link */}
-                      <div className="relative group inline-flex items-center justify-center gap-4 bg-white/5 border-2 border-white/10 text-white/50 font-pixel text-xl md:text-3xl uppercase tracking-widest px-8 py-6 text-center">
-                        <span className="material-symbols-outlined text-3xl">menu_book</span>
-                        <span>Handbook (Coming Soon)</span>
-                      </div>
+                      {/* Schedule Link */}
+                      <Link
+                        href="/sih/schedule"
+                        className="group relative inline-flex items-center justify-center gap-4 bg-primary hover:bg-primary/90 text-white font-pixel text-xl md:text-3xl uppercase tracking-widest px-8 py-6 transition-all duration-200 shadow-[4px_4px_0px_0px_rgba(215,38,255,0.6)] hover:translate-x-[-2px] hover:translate-y-[-2px] text-center"
+                      >
+                        <span className="material-symbols-outlined text-3xl">event_note</span>
+                        <span>Event Schedule</span>
+                      </Link>
                     </div>
                     <p className="text-xs md:text-base font-pixel text-white/40 text-center tracking-wider mt-2">
                       Only team leaders are requested to join the WhatsApp group. Read the guidelines carefully.

@@ -416,6 +416,7 @@ export async function GET(req: Request) {
       success: true,
       authenticated: true,
       registered: true,
+      currentUserEmail: email,
       data,
     });
   } catch (error) {
