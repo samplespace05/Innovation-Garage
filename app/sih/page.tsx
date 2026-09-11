@@ -410,6 +410,17 @@ export default function SIHPage() {
               SIH Official Portal — Themes &amp; Problem Statements
             </a>
 
+            {/* SIH Handbook link */}
+            <a
+              href="/SIH%20HandBook.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-xl text-primary hover:text-secondary transition-colors border-b border-primary/30 hover:border-secondary pb-0.5 font-pixel mt-2"
+            >
+              <span className="material-symbols-outlined text-xl">menu_book</span>
+              Download SIH Handbook
+            </a>
+
             {/* Register Now / Registration Details CTA */}
             <div className="mt-4 w-full flex justify-center">
               {loading ? (
@@ -482,6 +493,20 @@ export default function SIHPage() {
                           <p className="text-lg md:text-2xl text-white/70 font-pixel mt-2 leading-relaxed">
                             <span className="text-white/40">Faculty Mentor:</span> {registration.data?.["Faculty Mentor"]}
                           </p>
+                        )}
+                        {registration.data?.["Assigned Mentor"] && (
+                          <div className="mt-4 border border-secondary/30 bg-secondary/10 p-4 rounded-md">
+                            <p className="text-lg md:text-xl text-secondary font-pixel font-bold flex items-center gap-2">
+                              <span className="material-symbols-outlined text-xl">person</span>
+                              Assigned Mentor: {registration.data?.["Assigned Mentor"]}
+                            </p>
+                            {registration.data?.["Mentor Phone"] && (
+                              <p className="text-base text-white/60 font-pixel mt-1 flex items-center gap-2">
+                                <span className="material-symbols-outlined text-lg">call</span>
+                                {registration.data?.["Mentor Phone"]}
+                              </p>
+                            )}
+                          </div>
                         )}
                       </div>
                     </div>

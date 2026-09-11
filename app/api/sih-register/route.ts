@@ -412,6 +412,40 @@ export async function GET(req: Request) {
       data[header] = userRow ? userRow[idx] || "" : "";
     });
 
+    // Fetch Team Mentors
+    try {
+      const auth = getGoogleAuth();
+      const sheets = google.sheets({ version: "v4", auth });
+      const sheetId = process.env.GOOGLE_SHEET_ID;
+      
+      const mentorRes = await sheets.spreadsheets.values.get({
+        spreadsheetId: sheetId,
+        range: "Team Mentors!A:C",
+      });
+      const mentorRows = mentorRes.data.values;
+      if (mentorRows && mentorRows.length > 1) {
+        const mHeaders = mentorRows[0];
+        const tNameIdx = mHeaders.indexOf("Team Name");
+        const mNumIdx = mHeaders.indexOf("Mentor Number");
+        const mNameIdx = mHeaders.indexOf("Mentor");
+        
+        if (tNameIdx !== -1 && mNameIdx !== -1) {
+          const userTeamName = (data["Team Name"] || "").trim().toLowerCase();
+          for (let i = 1; i < mentorRows.length; i++) {
+            const row = mentorRows[i];
+            if (row[tNameIdx] && row[tNameIdx].trim().toLowerCase() === userTeamName) {
+              data["Assigned Mentor"] = row[mNameIdx] || "";
+              data["Mentor Phone"] = mNumIdx !== -1 ? (row[mNumIdx] || "") : "";
+              break;
+            }
+          }
+        }
+      }
+    } catch (e) {
+      console.error("Error fetching mentors:", e);
+      // Fail gracefully and continue returning data
+    }
+
     return NextResponse.json({
       success: true,
       authenticated: true,
