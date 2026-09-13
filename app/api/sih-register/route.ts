@@ -8,7 +8,7 @@ export const runtime = "nodejs";
 // ─────────────────────────────────────────────────────────────────────────────
 // CONFIG
 // ─────────────────────────────────────────────────────────────────────────────
-const REGISTRATION_CLOSED = false;
+const REGISTRATION_CLOSED = true;
 const REGISTRATION_DEADLINE = new Date("2026-09-13T13:00:00+05:30").getTime();
 
 const ALLOWED_NITW_DOMAINS = ["nitw.ac.in", "student.nitw.ac.in"];
@@ -417,7 +417,7 @@ export async function GET(req: Request) {
       const auth = getGoogleAuth();
       const sheets = google.sheets({ version: "v4", auth });
       const sheetId = process.env.GOOGLE_SHEET_ID;
-      
+
       const mentorRes = await sheets.spreadsheets.values.get({
         spreadsheetId: sheetId,
         range: "Team Mentors!A:C",
@@ -428,7 +428,7 @@ export async function GET(req: Request) {
         const tNameIdx = mHeaders.indexOf("Team Name");
         const mNumIdx = mHeaders.indexOf("Mentor Number");
         const mNameIdx = mHeaders.indexOf("Mentor");
-        
+
         if (tNameIdx !== -1 && mNameIdx !== -1) {
           const userTeamName = (data["Team Name"] || "").trim().toLowerCase();
           for (let i = 1; i < mentorRows.length; i++) {

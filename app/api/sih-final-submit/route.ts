@@ -4,6 +4,8 @@ import { verifyGoogleToken } from "@/lib/verifyGoogleToken";
 
 export const runtime = "nodejs";
 
+const FINAL_SUBMISSION_DEADLINE = new Date("2026-09-13T15:00:00+05:30").getTime();
+
 function getGoogleAuth() {
   const jsonString = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
   if (!jsonString) {
@@ -130,6 +132,10 @@ export async function GET(req: Request) {
 
 export async function POST(req: Request) {
   try {
+    if (Date.now() > FINAL_SUBMISSION_DEADLINE) {
+      return NextResponse.json({ success: false, error: "The final submission deadline has passed. No further submissions are accepted." }, { status: 403 });
+    }
+
     const cookies = parseCookies(req.headers.get("cookie"));
     const idToken = cookies["sih_auth_token"];
 

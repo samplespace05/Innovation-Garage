@@ -577,6 +577,7 @@ export default function SIHRegisterPage() {
   // Section 2 — Team Details
   const [teamName, setTeamName] = useState("");
   const [track, setTrack] = useState<"Software" | "Hardware" | "">("");
+  const [theme, setTheme] = useState("");
 
   // Section 3 — Team Leader
   const [leader, setLeader] = useState<MemberData & { phone: string }>({
@@ -1091,19 +1092,25 @@ export default function SIHRegisterPage() {
               <span className="material-symbols-outlined text-7xl text-red-400">block</span>
               <h2 className="font-pixel text-2xl md:text-3xl text-red-400 uppercase tracking-widest">Registration Closed</h2>
               <div className="font-pixel text-lg md:text-xl text-white/70 max-w-2xl flex flex-col items-center gap-4">
-                <p>
-                  New registrations are no longer being accepted for SIH IGnite 2026.
-                </p>
-                <p className="text-white/40 text-base">
-                  If you have already registered, your submission is safe. For any queries, contact ig@nitw.ac.in.
+                <p>Team Registrations for SIH IGNITE 2026 are now closed.</p>
+                <p className="text-base text-white/40 mt-2">
+                  If your team has been shortlisted, please proceed to the Final Submission portal.
                 </p>
               </div>
-              <Link
-                href="/sih"
-                className="inline-flex items-center gap-3 bg-primary text-white font-pixel text-xl uppercase tracking-widest px-8 py-4 hover:bg-primary/90 transition-all duration-200 shadow-[4px_4px_0px_0px_rgba(215,38,255,0.6)]"
-              >
-                Go to SIH Dashboard
-              </Link>
+              <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto mt-4">
+                <Link
+                  href="/sih/final-submission"
+                  className="inline-flex justify-center items-center gap-3 bg-primary text-white font-pixel text-xl uppercase tracking-widest px-8 py-4 hover:bg-primary/90 transition-all duration-200 shadow-[4px_4px_0px_0px_rgba(215,38,255,0.6)]"
+                >
+                  Final Submission
+                </Link>
+                <Link
+                  href="/sih"
+                  className="inline-flex justify-center items-center gap-3 bg-white/10 text-white font-pixel text-xl uppercase tracking-widest px-8 py-4 hover:bg-white/20 transition-all duration-200 border border-white/20"
+                >
+                  Dashboard
+                </Link>
+              </div>
             </div>
           )}
         </div>
