@@ -268,7 +268,7 @@ export default function SIHFinalSubmissionPage() {
 
             <FormInput 
               id="liveDemoLink" 
-              label="Live Demo Link" 
+              label="Live Demo Link (Website link/ colab link/ or any deployed link)" 
               required={false}
               value={liveDemoLink} 
               onChange={setLiveDemoLink} 
