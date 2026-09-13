@@ -298,6 +298,12 @@ export default function SIHPage() {
     authenticated: false,
     registered: false,
   });
+  const [finalSubmission, setFinalSubmission] = useState<{
+    submitted: boolean;
+    data?: any;
+  }>({
+    submitted: false,
+  });
 
   useEffect(() => {
     async function checkRegistration() {
@@ -312,6 +318,20 @@ export default function SIHPage() {
               currentUserEmail: result.currentUserEmail,
               data: result.data,
             });
+
+            if (result.authenticated && result.data?.["Shortlisted"] === "TRUE") {
+               try {
+                 const fRes = await fetch("/api/sih-final-submit");
+                 if (fRes.ok) {
+                   const fResult = await fRes.json();
+                   if (fResult.success && fResult.submitted) {
+                      setFinalSubmission({ submitted: true, data: fResult.data });
+                   }
+                 }
+               } catch (e) {
+                 console.error("Error fetching final submission", e);
+               }
+            }
           }
         }
       } catch (err) {
@@ -456,10 +476,31 @@ export default function SIHPage() {
                         </div>
                       </div>
 
-                      {registration.data?.["Selected"] === "TRUE" && (
-                        <div className="bg-green-500/10 border border-green-500/30 px-4 py-3 mt-2 flex items-center gap-3 w-fit">
-                          <span className="material-symbols-outlined text-green-400">celebration</span>
-                          <span className="text-green-400 font-pixel text-sm md:text-base">Congratulations! Your team has been shortlisted. Check resources below.</span>
+                      {registration.data?.["Shortlisted"] === "TRUE" && (
+                        <div className="bg-primary/10 border border-primary/30 p-6 mt-4 flex flex-col gap-4 w-full">
+                          <h3 className="text-primary font-pixel text-xl md:text-2xl uppercase tracking-widest font-bold">
+                            Final Submission
+                          </h3>
+                          
+                          {finalSubmission.submitted ? (
+                             <div className="bg-background-main/50 border border-white/10 p-4 flex flex-col gap-3">
+                                <span className="text-secondary font-pixel text-lg uppercase">Your Final Submission:</span>
+                                <div className="text-white/80 font-sans text-base flex flex-col gap-2">
+                                  <p><strong>Youtube Link:</strong> <a href={finalSubmission.data?.["Youtube Link"]} target="_blank" className="text-primary hover:underline break-all">{finalSubmission.data?.["Youtube Link"]}</a></p>
+                                  <p><strong>PPTX Link:</strong> <a href={finalSubmission.data?.["PPTX Link"]} target="_blank" className="text-primary hover:underline break-all">{finalSubmission.data?.["PPTX Link"]}</a></p>
+                                  {finalSubmission.data?.["Github Link"] && <p><strong>Github Link:</strong> <a href={finalSubmission.data?.["Github Link"]} target="_blank" className="text-primary hover:underline break-all">{finalSubmission.data?.["Github Link"]}</a></p>}
+                                  {finalSubmission.data?.["Live Demo Link"] && <p><strong>Live Demo Link:</strong> <a href={finalSubmission.data?.["Live Demo Link"]} target="_blank" className="text-primary hover:underline break-all">{finalSubmission.data?.["Live Demo Link"]}</a></p>}
+                                  <div className="mt-2 text-sm text-white/60 bg-white/5 p-3 rounded-md"><strong>Pitch:</strong><br />{finalSubmission.data?.["Pitch"]}</div>
+                                </div>
+                             </div>
+                          ) : (
+                             <div className="flex flex-col gap-3">
+                               <p className="text-white/80 font-pixel text-sm md:text-base">Please complete your final submission with your demo video, presentation, and code repository links.</p>
+                               <Link href="/sih/final-submission" className="mt-2 w-fit bg-primary hover:bg-primary/90 text-background-main font-pixel uppercase px-6 py-3 transition-all shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)]">
+                                 Submit Final Project
+                               </Link>
+                             </div>
+                          )}
                         </div>
                       )}
 
