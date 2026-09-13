@@ -59,6 +59,8 @@ export async function GET(req: Request) {
     }
 
     const email = tokenPayload.email;
+    const url = new URL(req.url);
+    const teamNameParam = url.searchParams.get("teamName");
 
     const auth = getGoogleAuth();
     const sheets = google.sheets({ version: "v4", auth });
@@ -86,15 +88,19 @@ export async function GET(req: Request) {
 
     const headers = rows[0];
     const emailColIdx = headers.findIndex((h: string) => h.toLowerCase() === "authenticated email");
+    const teamNameColIdx = headers.findIndex((h: string) => h.toLowerCase() === "team name");
 
-    if (emailColIdx === -1) {
+    if (emailColIdx === -1 && teamNameColIdx === -1) {
       return NextResponse.json({ success: true, authenticated: true, submitted: false, currentUserEmail: email });
     }
 
     // Find the row
     let userRow: any[] | null = null;
     for (let i = 1; i < rows.length; i++) {
-      if (rows[i][emailColIdx] === email) {
+      const rowEmail = emailColIdx !== -1 ? rows[i][emailColIdx] : null;
+      const rowTeamName = teamNameColIdx !== -1 ? rows[i][teamNameColIdx] : null;
+
+      if (rowEmail === email || (teamNameParam && rowTeamName === teamNameParam)) {
         userRow = rows[i];
         break;
       }
@@ -170,11 +176,17 @@ export async function POST(req: Request) {
     if (existingRows.length > 0) {
       const headers = existingRows[0];
       const emailColIdx = headers.findIndex((h: string) => h.toLowerCase() === "authenticated email");
-      if (emailColIdx !== -1) {
-        for (let i = 1; i < existingRows.length; i++) {
-          if (existingRows[i][emailColIdx] === email) {
-             return NextResponse.json({ success: false, error: "You have already submitted the final response." }, { status: 400 });
-          }
+      const teamNameColIdx = headers.findIndex((h: string) => h.toLowerCase() === "team name");
+      
+      for (let i = 1; i < existingRows.length; i++) {
+        const rowEmail = emailColIdx !== -1 ? existingRows[i][emailColIdx] : null;
+        const rowTeamName = teamNameColIdx !== -1 ? existingRows[i][teamNameColIdx] : null;
+
+        if (rowEmail === email) {
+           return NextResponse.json({ success: false, error: "You have already submitted the final response." }, { status: 400 });
+        }
+        if (body.teamName && rowTeamName === body.teamName) {
+           return NextResponse.json({ success: false, error: "Your team has already submitted the final response." }, { status: 400 });
         }
       }
     }

@@ -321,7 +321,8 @@ export default function SIHPage() {
 
             if (result.authenticated && result.data?.["Shortlisted"] === "TRUE") {
                try {
-                 const fRes = await fetch("/api/sih-final-submit");
+                 const teamName = result.data["Team Name"];
+                 const fRes = await fetch(`/api/sih-final-submit${teamName ? `?teamName=${encodeURIComponent(teamName)}` : ""}`);
                  if (fRes.ok) {
                    const fResult = await fRes.json();
                    if (fResult.success && fResult.submitted) {
@@ -684,24 +685,28 @@ export default function SIHPage() {
               ) : (
                 <div className="flex flex-col items-center">
                   {registration.authenticated ? (
-                    <div className="flex flex-col items-center gap-3 border-2 border-red-500/40 bg-red-900/20 p-8 max-w-md w-full">
-                      <span className="material-symbols-outlined text-5xl text-red-400">block</span>
-                      <p className="text-red-400 font-pixel text-2xl md:text-3xl uppercase tracking-widest text-center">
-                        Registration Closed
+                    <div className="flex flex-col items-center gap-3 border-2 border-primary/40 bg-primary/10 p-8 max-w-md w-full">
+                      <span className="material-symbols-outlined text-5xl text-primary">app_registration</span>
+                      <p className="text-text-main font-pixel text-2xl md:text-3xl uppercase tracking-widest text-center">
+                        Ready to Register?
                       </p>
-                      <p className="text-white/40 font-pixel text-lg text-center">
-                        New registrations are no longer being accepted.
-                      </p>
+                      <Link
+                        href="/sih/register"
+                        className="mt-2 inline-flex items-center gap-2 bg-primary text-white font-pixel text-lg uppercase tracking-widest px-6 py-3 hover:bg-primary/90 transition-all duration-200 shadow-[4px_4px_0px_0px_rgba(215,38,255,0.6)] hover:translate-x-[-2px] hover:translate-y-[-2px]"
+                      >
+                        <span className="material-symbols-outlined text-xl">app_registration</span>
+                        Register Now
+                      </Link>
                     </div>
                   ) : (
                     <div className="flex flex-col items-center gap-4">
                       <div className="flex flex-col items-center gap-3 border-2 border-white/10 bg-surface-card p-8 max-w-md w-full">
                         <span className="material-symbols-outlined text-5xl text-white/30">lock</span>
                         <p className="text-white/50 font-pixel text-2xl md:text-3xl uppercase tracking-widest text-center">
-                          Registration Closed
+                          Registration Open
                         </p>
                         <p className="text-white/30 font-pixel text-lg text-center">
-                          Login to view your registration status.
+                          Login to start your registration.
                         </p>
                         <Link
                           href="/sih/register"

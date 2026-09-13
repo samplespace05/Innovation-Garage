@@ -8,8 +8,8 @@ export const runtime = "nodejs";
 // ─────────────────────────────────────────────────────────────────────────────
 // CONFIG
 // ─────────────────────────────────────────────────────────────────────────────
-// Set to true to completely block new registrations at the API level
-const REGISTRATION_CLOSED = true;
+const REGISTRATION_CLOSED = false;
+const REGISTRATION_DEADLINE = new Date("2026-09-13T13:00:00+05:30").getTime();
 
 const ALLOWED_NITW_DOMAINS = ["nitw.ac.in", "student.nitw.ac.in"];
 // ─────────────────────────────────────────────────────────────────────────────
@@ -470,7 +470,7 @@ export async function POST(req: Request) {
   const headers = corsHeaders(origin) ?? {};
 
   // ── 0. REGISTRATION CLOSED CHECK ───────────────────────────────────────
-  if (REGISTRATION_CLOSED) {
+  if (REGISTRATION_CLOSED || Date.now() > REGISTRATION_DEADLINE) {
     return NextResponse.json(
       { success: false, error: "Registration is closed. No new registrations are being accepted." },
       { status: 403, headers }
